@@ -34,6 +34,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
+import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -54,6 +56,10 @@ export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
+  text?: p.Flex<"div">;
+  graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
+  graphCmsField?: p.Flex<typeof GraphCMSField>;
 };
 
 export interface DefaultHomepageProps {}
@@ -126,6 +132,66 @@ function PlasmicHomepage__RenderFunc(props: {
             >
               {"Wellcome to Bentuk Cinta 💖"}
             </h1>
+
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text
+              )}
+            >
+              {"Karna di setiap kebahagiaan kalian, ada kebahagian kami juga"}
+            </div>
+
+            <GraphCMSFetcher
+              data-plasmic-name={"graphCmsFetcher"}
+              data-plasmic-override={overrides.graphCmsFetcher}
+              className={classNames("__wab_instance", sty.graphCmsFetcher)}
+              noLayout={false}
+              query={{
+                query:
+                  "query MyQuery {\n  pengantins {\n    slug\n    title\n  }\n}\n",
+                variables: {}
+              }}
+            >
+              <ph.DataCtxReader>
+                {$ctx => (
+                  <p.PlasmicLink
+                    data-plasmic-name={"link"}
+                    data-plasmic-override={overrides.link}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link
+                    )}
+                    component={Link}
+                    href={`/${(() => {
+                      try {
+                        return $ctx.graphCmsItem.slug;
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "agustika";
+                        }
+                        throw e;
+                      }
+                    })()}`}
+                    platform={"nextjs"}
+                  >
+                    <GraphCMSField
+                      data-plasmic-name={"graphCmsField"}
+                      data-plasmic-override={overrides.graphCmsField}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.graphCmsField
+                      )}
+                      path={["title"]}
+                    />
+                  </p.PlasmicLink>
+                )}
+              </ph.DataCtxReader>
+            </GraphCMSFetcher>
           </p.Stack>
         </div>
       </div>
@@ -134,9 +200,28 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1"],
-  section: ["section", "h1"],
-  h1: ["h1"]
+  root: [
+    "root",
+    "section",
+    "h1",
+    "text",
+    "graphCmsFetcher",
+    "link",
+    "graphCmsField"
+  ],
+  section: [
+    "section",
+    "h1",
+    "text",
+    "graphCmsFetcher",
+    "link",
+    "graphCmsField"
+  ],
+  h1: ["h1"],
+  text: ["text"],
+  graphCmsFetcher: ["graphCmsFetcher", "link", "graphCmsField"],
+  link: ["link", "graphCmsField"],
+  graphCmsField: ["graphCmsField"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -145,6 +230,10 @@ type NodeDefaultElementType = {
   root: "div";
   section: "section";
   h1: "h1";
+  text: "div";
+  graphCmsFetcher: typeof GraphCMSFetcher;
+  link: "a";
+  graphCmsField: typeof GraphCMSField;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -210,6 +299,10 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
+    text: makeNodeComponent("text"),
+    graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
+    link: makeNodeComponent("link"),
+    graphCmsField: makeNodeComponent("graphCmsField"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
