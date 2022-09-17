@@ -1,0 +1,80 @@
+{
+  "projects": [
+    {
+      "projectId": "22U3ZXm4dE59qEW488gxzU",
+      "version": "0.4.0",
+      "dependencies": {},
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "assetId": "22U3ZXm4dE59qEW488gxzU",
+          "type": "projectCss",
+          "checksum": "ea328be60296c605e32740632c6a5f34"
+        },
+        {
+          "assetId": "22U3ZXm4dE59qEW488gxzU",
+          "checksum": "d1103af3d09ed83b0e595b6cdcc0d934",
+          "type": "globalContexts"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    },
+    {
+      "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+      "version": "latest",
+      "dependencies": {
+        "22U3ZXm4dE59qEW488gxzU": "0.4.0"
+      },
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "type": "globalVariant",
+          "assetId": "Qo0Z9eiWgEMOL",
+          "checksum": "c3432cdfed7e96df61ad4cd5c44d65b3"
+        },
+        {
+          "assetId": "sqsUtdEY9EziH5JCt3D7uY",
+          "type": "projectCss",
+          "checksum": "cc8f8b18d561cdcbdbe5b3ffe7ca777a"
+        },
+        {
+          "assetId": "sqsUtdEY9EziH5JCt3D7uY",
+          "checksum": "6b5ab22126477aed3a90ffac33cc6b05",
+          "type": "globalContexts"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "1HwcT7Xtgy21",
+          "checksum": "cafcd2efe2c763dd7cf256c2fcf5587c"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "1HwcT7Xtgy21",
+          "checksum": "cafcd2efe2c763dd7cf256c2fcf5587c"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "eGAkIo7VuV",
+          "checksum": "015aa145598cc5e2f939ca21f7a2a474"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "eGAkIo7VuV",
+          "checksum": "015aa145598cc5e2f939ca21f7a2a474"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "KyRWDtnvsi",
+          "checksum": "ecf17708305c7002f6926293dab0d9a7"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "KyRWDtnvsi",
+          "checksum": "ecf17708305c7002f6926293dab0d9a7"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    }
+  ],
+  "cliVersion": "0.1.186"
+}
