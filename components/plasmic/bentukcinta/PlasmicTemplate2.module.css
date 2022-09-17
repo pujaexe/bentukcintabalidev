@@ -36,7 +36,7 @@
   min-width: 0;
   padding: 0px;
 }
-.freeBox__f12G {
+.freeBox___4PyoA {
   display: block;
   position: absolute;
   width: 100%;
@@ -103,7 +103,7 @@
   > img {
   margin-top: 24px;
 }
-.h4__rtwGf {
+.h4__sh8N {
   position: relative;
   width: 100%;
   height: auto;
@@ -125,7 +125,7 @@
   min-width: 0;
   padding: 8px;
 }
-.graphCmsField__gyaMl:global(.__wab_instance) {
+.graphCmsField__tSpc:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   color: #ffffff;
@@ -140,55 +140,23 @@
   min-width: 0;
 }
 .date {
-  flex-direction: row;
   display: flex;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  min-width: 0;
-  padding: 8px;
-}
-.date > :global(.__wab_flex-container) {
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  margin-left: calc(0px - 24px);
-  width: calc(100% + 24px);
-}
-.date > :global(.__wab_flex-container) > *,
-.date > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.date > :global(.__wab_flex-container) > picture > img,
-.date > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
-  margin-left: 24px;
-}
-.freeBox__jddmp {
-  display: flex;
   position: relative;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
   width: 100%;
   height: auto;
   max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
   min-width: 0;
-  padding: 0px;
+  padding: 8px;
 }
-.h2 {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 800px;
-  text-align: right;
-  color: #ffffff;
-}
-.h4__cW7Cy {
+.h4__t88Lh {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
-  text-align: left;
+  text-align: center;
   color: #ffffff;
   min-width: 0;
 }
@@ -199,6 +167,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  background: #dde4dd;
   min-width: 0;
   padding: 9rem 0px;
 }
@@ -344,7 +313,7 @@
   min-width: 0;
   padding: 0px;
 }
-.graphCmsField__hlzwD:global(.__wab_instance) {
+.graphCmsField__sply1:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -371,7 +340,7 @@
   text-align: right;
   padding: 0px;
 }
-.graphCmsField__jwmyC:global(.__wab_instance) {
+.graphCmsField__mciE:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   width: auto;
@@ -392,7 +361,7 @@
   align-items: center;
   padding: 0px;
 }
-.graphCmsField__hUt4V:global(.__wab_instance) {
+.graphCmsField__wsjtg:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   width: auto;
@@ -409,7 +378,7 @@
   min-width: 0;
   padding: 0px;
 }
-.graphCmsField__slPs:global(.__wab_instance) {
+.graphCmsField__is9F:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -453,7 +422,7 @@
   min-width: 0;
   padding: 0px;
 }
-.graphCmsField__ghWjh:global(.__wab_instance) {
+.graphCmsField__kttZf:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -480,7 +449,7 @@
   text-align: right;
   padding: 0px;
 }
-.graphCmsField__kfbgc:global(.__wab_instance) {
+.graphCmsField___74HM:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   width: auto;
@@ -501,7 +470,7 @@
   align-items: center;
   padding: 0px;
 }
-.graphCmsField__vSm1H:global(.__wab_instance) {
+.graphCmsField__yfFAp:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   width: auto;
@@ -518,7 +487,7 @@
   min-width: 0;
   padding: 0px;
 }
-.graphCmsField__w1VAk:global(.__wab_instance) {
+.graphCmsField__y1UpE:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -531,100 +500,54 @@
   min-width: 0;
 }
 .row {
-  flex-direction: column;
   display: flex;
   position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
   padding: 0px;
-}
-.row > :global(.__wab_flex-container) {
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  margin-top: calc(0px - 8px);
-  height: calc(100% + 8px);
-}
-.row > :global(.__wab_flex-container) > *,
-.row > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.row > :global(.__wab_flex-container) > picture > img,
-.row > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
-  margin-top: 8px;
 }
 .date2 {
-  flex-direction: row;
   display: flex;
   position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
   padding: 0px;
-}
-.date2 > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  margin-left: calc(0px - 12px);
-  width: calc(100% + 12px);
-}
-.date2 > :global(.__wab_flex-container) > *,
-.date2 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.date2 > :global(.__wab_flex-container) > picture > img,
-.date2 > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
-  margin-left: 12px;
 }
 .text__g6Gpv {
   position: relative;
 }
-.text__p4KTx {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 800px;
+.graphCmsField__pTn3Q:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }
 .pukul {
-  flex-direction: row;
   display: flex;
   position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
   padding: 0px;
 }
-.pukul > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  margin-left: calc(0px - 12px);
-  width: calc(100% + 12px);
-}
-.pukul > :global(.__wab_flex-container) > *,
-.pukul > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.pukul > :global(.__wab_flex-container) > picture > img,
-.pukul > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
-  margin-left: 12px;
-}
 .text__xHZo {
   position: relative;
 }
-.text___0UbXn {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 800px;
-}
-.text___47P7E {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 800px;
+.graphCmsField__xcZXy:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }
 .alamat {
   display: flex;
@@ -641,7 +564,7 @@
 .text__vnDf4 {
   position: relative;
 }
-.graphCmsField__jIw:global(.__wab_instance) {
+.graphCmsField__f3SWc:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }

@@ -122,14 +122,14 @@ function PlasmicInvitationPage__RenderFunc(props: {
                   query:
                     'query MyQuery {\n  pengantin(where: {slug: "' +
                     $ctx.params.slug +
-                    '"}) {\n    slug\n    title\n    eventLocation\n    evenDateTime\n    eventMap {\n      latitude\n      longitude\n    }\n    phone1\n    phone2\n    pengantinPria\n    pengantinWanita\n    bapakPria\n    bapakWanita\n    ibuPria\n    ibuWanita\n    alamatPria\n    alamatWanita\n    coverPhoto\n    youtubeUrl\n    templateUse\n  }\n}\n',
+                    '"}) {\n    slug\n    title\n    templateUse\n evenDateTime\n }\n}\n',
                   variables: {}
                 };
               } catch (e) {
                 if (e instanceof TypeError) {
                   return {
                     query:
-                      'query MyQuery {\n  pengantin(where: {slug: "agustika"}) {\n    slug\n    title\n    eventLocation\n    evenDateTime\n    eventMap {\n      latitude\n      longitude\n    }\n    phone1\n    phone2\n    pengantinPria\n    pengantinWanita\n    bapakPria\n    bapakWanita\n    ibuPria\n    ibuWanita\n    alamatPria\n    alamatWanita\n    coverPhoto\n    youtubeUrl\n    templateUse\n  }\n}\n',
+                      'query MyQuery {\n  pengantin(where: {slug: "agustika"}) {\n    slug\n    title\n    eventMap\n    templateUse\n  }\n}\n',
                     variables: {}
                   };
                 }
@@ -171,6 +171,7 @@ function PlasmicInvitationPage__RenderFunc(props: {
                         throw e;
                       }
                     })()}
+                    template={$ctx.graphCmsItem.templateUse}
                   />
                 </React.Fragment>
               )}

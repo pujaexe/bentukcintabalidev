@@ -35,17 +35,25 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Template1 from "../../Template1"; // plasmic-import: F6P_0Ibk5i6/component
+import Template2 from "../../Template2"; // plasmic-import: PebR7r49CnQ/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: sqsUtdEY9EziH5JCt3D7uY/projectcss
 import sty from "./PlasmicLayout.module.css"; // plasmic-import: KyRWDtnvsi/css
 
-export type PlasmicLayout__VariantMembers = {};
+export type PlasmicLayout__VariantMembers = {
+  template: "template1" | "template2";
+};
 
-export type PlasmicLayout__VariantsArgs = {};
+export type PlasmicLayout__VariantsArgs = {
+  template?: SingleChoiceArg<"template1" | "template2">;
+};
+
 type VariantPropType = keyof PlasmicLayout__VariantsArgs;
-export const PlasmicLayout__VariantProps = new Array<VariantPropType>();
+export const PlasmicLayout__VariantProps = new Array<VariantPropType>(
+  "template"
+);
 
 export type PlasmicLayout__ArgsType = {
   layoutSlug?: string;
@@ -57,10 +65,12 @@ export const PlasmicLayout__ArgProps = new Array<ArgPropType>("layoutSlug");
 export type PlasmicLayout__OverridesType = {
   root?: p.Flex<"div">;
   template1?: p.Flex<typeof Template1>;
+  template2?: p.Flex<typeof Template2>;
 };
 
 export interface DefaultLayoutProps {
   layoutSlug?: string;
+  template?: SingleChoiceArg<"template1" | "template2">;
   className?: string;
 }
 
@@ -104,28 +114,74 @@ function PlasmicLayout__RenderFunc(props: {
         sty.root
       )}
     >
-      <Template1
-        data-plasmic-name={"template1"}
-        data-plasmic-override={overrides.template1}
-        className={classNames("__wab_instance", sty.template1)}
-        templateSlug={(() => {
-          try {
-            return $props.layoutSlug;
-          } catch (e) {
-            if (e instanceof TypeError) {
-              return undefined;
+      {(hasVariant(variants, "template", "template2") ? true : true) ? (
+        <Template1
+          data-plasmic-name={"template1"}
+          data-plasmic-override={overrides.template1}
+          className={classNames("__wab_instance", sty.template1, {
+            [sty.template1template_template1]: hasVariant(
+              variants,
+              "template",
+              "template1"
+            ),
+            [sty.template1template_template2]: hasVariant(
+              variants,
+              "template",
+              "template2"
+            )
+          })}
+          templateSlug={(() => {
+            try {
+              return $props.layoutSlug;
+            } catch (e) {
+              if (e instanceof TypeError) {
+                return undefined;
+              }
+              throw e;
             }
-            throw e;
+          })()}
+        />
+      ) : null}
+      {(hasVariant(variants, "template", "template1") ? true : true) ? (
+        <Template2
+          data-plasmic-name={"template2"}
+          data-plasmic-override={overrides.template2}
+          className={classNames("__wab_instance", sty.template2, {
+            [sty.template2template_template1]: hasVariant(
+              variants,
+              "template",
+              "template1"
+            ),
+            [sty.template2template_template2]: hasVariant(
+              variants,
+              "template",
+              "template2"
+            )
+          })}
+          templateSlug={
+            hasVariant(variants, "template", "template2")
+              ? (() => {
+                  try {
+                    return $props.layoutSlug;
+                  } catch (e) {
+                    if (e instanceof TypeError) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()
+              : undefined
           }
-        })()}
-      />
+        />
+      ) : null}
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "template1"],
-  template1: ["template1"]
+  root: ["root", "template1", "template2"],
+  template1: ["template1"],
+  template2: ["template2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -133,6 +189,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   template1: typeof Template1;
+  template2: typeof Template2;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -197,6 +254,7 @@ export const PlasmicLayout = Object.assign(
   {
     // Helper components rendering sub-elements
     template1: makeNodeComponent("template1"),
+    template2: makeNodeComponent("template2"),
 
     // Metadata about props expected for PlasmicLayout
     internalVariantProps: PlasmicLayout__VariantProps,

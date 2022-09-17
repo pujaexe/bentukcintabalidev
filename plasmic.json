@@ -109,6 +109,32 @@
           "cssFilePath": "plasmic/bentukcinta/PlasmicTemplate1.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "ccyNqBOp-s",
+          "name": "MonthWord",
+          "type": "managed",
+          "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicMonthWord.tsx",
+          "importSpec": {
+            "modulePath": "MonthWord.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicMonthWord.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "PebR7r49CnQ",
+          "name": "Template2",
+          "type": "managed",
+          "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicTemplate2.tsx",
+          "importSpec": {
+            "modulePath": "Template2.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicTemplate2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [],
