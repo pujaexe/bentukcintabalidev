@@ -54,7 +54,7 @@
     {
       "projectId": "sqsUtdEY9EziH5JCt3D7uY",
       "projectApiToken": "25osf5BcBiNFLXthR09qogHCK8TGSUVtL7mMUBhl6BUZ2ipo0fE2bGzxt0S8Da02DxS5GfmX6kx8VHcgjw",
-      "projectName": "Blank project",
+      "projectName": "bentukcinta",
       "version": "latest",
       "cssFilePath": "plasmic/blank_project/plasmic_blank_project.module.css",
       "components": [
@@ -86,14 +86,27 @@
         },
         {
           "id": "KyRWDtnvsi",
-          "name": "PageTemplate",
+          "name": "Layout",
           "type": "managed",
           "projectId": "sqsUtdEY9EziH5JCt3D7uY",
-          "renderModuleFilePath": "plasmic/blank_project/PlasmicPageTemplate.tsx",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicLayout.tsx",
           "importSpec": {
-            "modulePath": "PageTemplate.tsx"
+            "modulePath": "Layout.tsx"
           },
-          "cssFilePath": "plasmic/blank_project/PlasmicPageTemplate.module.css",
+          "cssFilePath": "plasmic/bentukcinta/PlasmicLayout.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "F6P_0Ibk5i6",
+          "name": "Template1",
+          "type": "managed",
+          "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicTemplate1.tsx",
+          "importSpec": {
+            "modulePath": "Template1.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicTemplate1.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }

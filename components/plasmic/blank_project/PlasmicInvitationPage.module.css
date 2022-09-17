@@ -23,6 +23,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.pageTemplate:global(.__wab_instance) {
+.layout:global(.__wab_instance) {
   position: relative;
 }

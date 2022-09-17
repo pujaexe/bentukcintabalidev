@@ -45,6 +45,7 @@
   height: auto;
   max-width: 800px;
   margin-bottom: 32px;
+  margin-top: calc(0px + 16px) !important;
   min-width: 0;
 }
 .text {

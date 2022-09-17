@@ -36,7 +36,7 @@ import {
 } from "@plasmicapp/react-web";
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
 import { PlasmicHead } from "@plasmicapp/react-web"; // plasmic-import: wPGZWqMTEY/codeComponent
-import PageTemplate from "../../PageTemplate"; // plasmic-import: KyRWDtnvsi/component
+import Layout from "../../Layout"; // plasmic-import: KyRWDtnvsi/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -57,7 +57,7 @@ export type PlasmicInvitationPage__OverridesType = {
   root?: p.Flex<"div">;
   graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
   head?: p.Flex<typeof PlasmicHead>;
-  pageTemplate?: p.Flex<typeof PageTemplate>;
+  layout?: p.Flex<typeof Layout>;
 };
 
 export interface DefaultInvitationPageProps {}
@@ -157,11 +157,20 @@ function PlasmicInvitationPage__RenderFunc(props: {
                     })()}
                   />
 
-                  <PageTemplate
-                    data-plasmic-name={"pageTemplate"}
-                    data-plasmic-override={overrides.pageTemplate}
-                    className={classNames("__wab_instance", sty.pageTemplate)}
-                    template={$ctx.graphCmsItem.templateUse}
+                  <Layout
+                    data-plasmic-name={"layout"}
+                    data-plasmic-override={overrides.layout}
+                    className={classNames("__wab_instance", sty.layout)}
+                    layoutSlug={(() => {
+                      try {
+                        return $ctx.graphCmsItem.slug;
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
                   />
                 </React.Fragment>
               )}
@@ -174,10 +183,10 @@ function PlasmicInvitationPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "graphCmsFetcher", "head", "pageTemplate"],
-  graphCmsFetcher: ["graphCmsFetcher", "head", "pageTemplate"],
+  root: ["root", "graphCmsFetcher", "head", "layout"],
+  graphCmsFetcher: ["graphCmsFetcher", "head", "layout"],
   head: ["head"],
-  pageTemplate: ["pageTemplate"]
+  layout: ["layout"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -186,7 +195,7 @@ type NodeDefaultElementType = {
   root: "div";
   graphCmsFetcher: typeof GraphCMSFetcher;
   head: typeof PlasmicHead;
-  pageTemplate: typeof PageTemplate;
+  layout: typeof Layout;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -252,7 +261,7 @@ export const PlasmicInvitationPage = Object.assign(
     // Helper components rendering sub-elements
     graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
     head: makeNodeComponent("head"),
-    pageTemplate: makeNodeComponent("pageTemplate"),
+    layout: makeNodeComponent("layout"),
 
     // Metadata about props expected for PlasmicInvitationPage
     internalVariantProps: PlasmicInvitationPage__VariantProps,
