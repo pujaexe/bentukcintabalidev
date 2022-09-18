@@ -34,12 +34,12 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
 import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 import MonthWord from "../../MonthWord"; // plasmic-import: ccyNqBOp-s/component
 import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 
 import { useScreenVariants as useScreenVariantsqo0Z9EiWgEmol } from "../blank_project/PlasmicGlobalVariant__Screen"; // plasmic-import: Qo0Z9eiWgEMOL/globalVariant
 
@@ -67,6 +67,7 @@ export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicTemplate1__OverridesType = {
   root?: p.Flex<"div">;
+  bootstrap?: p.Flex<typeof Embed>;
   hero?: p.Flex<"header">;
   contentWrapper?: p.Flex<"div">;
   h4?: p.Flex<"h4">;
@@ -158,6 +159,15 @@ function PlasmicTemplate1__RenderFunc(props: {
         sty.root
       )}
     >
+      <Embed
+        data-plasmic-name={"bootstrap"}
+        data-plasmic-override={overrides.bootstrap}
+        className={classNames("__wab_instance", sty.bootstrap)}
+        code={
+          '  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">\n  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>\n  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>\n\n\n\n\n\n  <div id="myModal" class="modal fade">\n        <div class="modal-dialog">\n            <div class="modal-content">\n                <div class="modal-header">\n                    <h5 class="modal-title">Protokol Covid-19</h5>\n                    <button type="button" class="close" data-dismiss="modal">&times;</button>\n                </div>\n                <div class="modal-body">\n                    <p>Tanpa mengurangi rasa hormat, dikarenakan situasi yang sedang terjadi ditengah Pandemi Covid-19 ini kami memohon maaf karena acara akan diselenggarakan sesuai peraturan dan himbauan pemerintah.</p>\n                    <div class="row">\n                      <div class="col-md-4 col-4">\n                        <img src="img/cucitangan.png" width="80px" class="img-responsive">\n                        <p class="mt16">Membersihkan tangan</p>\n                      </div>\n                      <div class="col-md-4 col-4">\n                        <img src="img/masker.png" width="80px" class="img-responsive">\n                        <p class="mt16">Memakai masker</p>\n                      </div>\n                      <div class="col-md-4 col-4">\n                        <img src="img/jagajarak.png" width="80px" class="img-responsive">\n                         <p class="mt16">Menjaga jarak</p>\n                      </div>\n                    </div>             \n                    <h5>Mari kita lindungi kesehatan bersama.</h5>\n                </div>\n            </div>\n        </div>\n    </div>' as const
+        }
+      />
+
       <GraphCMSFetcher
         className={classNames("__wab_instance", sty.graphCmsFetcher__mX05W)}
         noLayout={true}
@@ -1102,7 +1112,7 @@ function PlasmicTemplate1__RenderFunc(props: {
                       data-plasmic-override={overrides.embedHtml}
                       className={classNames("__wab_instance", sty.embedHtml)}
                       code={
-                        '<audio id="audio" autoplay controls loop>\n    <source src="https://www.bentukcinta.com/depurnapasir/music/song.mp3">\n</audio>\n\n\n\n\n<script type="text/javascript">\nwindow.onload=function(){\n    document.getElementById("audio").play();\n  }\n</script>' as const
+                        '<audio id="audio" controls loop>\n    <source src="https://www.bentukcinta.com/depurnapasir/music/song.mp3">\n</audio>\n\n\n\n\n<script type="text/javascript">\nwindow.onload=function(){\n    document.getElementById("audio").play();\n  }\n</script>' as const
                       }
                     />
                   </div>
@@ -1119,6 +1129,7 @@ function PlasmicTemplate1__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "bootstrap",
     "hero",
     "contentWrapper",
     "h4",
@@ -1159,6 +1170,7 @@ const PlasmicDescendants = {
     "buttonWrapper",
     "embedHtml"
   ],
+  bootstrap: ["bootstrap"],
   hero: [
     "hero",
     "contentWrapper",
@@ -1286,6 +1298,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  bootstrap: typeof Embed;
   hero: "header";
   contentWrapper: "div";
   h4: "h4";
@@ -1388,6 +1401,7 @@ export const PlasmicTemplate1 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    bootstrap: makeNodeComponent("bootstrap"),
     hero: makeNodeComponent("hero"),
     contentWrapper: makeNodeComponent("contentWrapper"),
     h4: makeNodeComponent("h4"),
