@@ -973,7 +973,15 @@ function PlasmicTemplate1__RenderFunc(props: {
                                     displayMaxWidth={"none" as const}
                                     displayMinHeight={"0" as const}
                                     displayMinWidth={"0" as const}
-                                    displayWidth={"300px" as const}
+                                    displayWidth={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobileOnly"
+                                      )
+                                        ? ("100%" as const)
+                                        : ("300px" as const)
+                                    }
                                     loading={"lazy" as const}
                                     src={(() => {
                                       try {
