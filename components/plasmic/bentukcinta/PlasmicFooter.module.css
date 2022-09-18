@@ -10,6 +10,12 @@
   min-width: 0;
   padding: 9rem 0px 5rem;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 .text {
   position: relative;
   width: 100%;
