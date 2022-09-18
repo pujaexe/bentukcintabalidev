@@ -25,3 +25,6 @@
 .template2template_template1:global(.__wab_instance) {
   display: none;
 }
+.footer:global(.__wab_instance) {
+  position: relative;
+}

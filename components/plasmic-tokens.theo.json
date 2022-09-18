@@ -1,5 +1,66 @@
 {
-  "props": [],
+  "props": [
+    {
+      "name": "T1-Body-font-size",
+      "type": "fontsize",
+      "value": "0.88rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+        "id": "tzoh8lF-J"
+      }
+    },
+    {
+      "name": "T1-Heading1-FontSize",
+      "type": "fontsize",
+      "value": "3.5rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+        "id": "yABs3efs1"
+      }
+    },
+    {
+      "name": "T1-SmallFont",
+      "type": "fontsize",
+      "value": "0.75rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+        "id": "v3lrVIrdV"
+      }
+    },
+    {
+      "name": "T1-Subtitle-FontSize",
+      "type": "fontsize",
+      "value": "1rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+        "id": "eCYK1bYIJ"
+      }
+    },
+    {
+      "name": "T1-Title-FontSize",
+      "type": "fontsize",
+      "value": "2.25rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+        "id": "N2rDdMwDv"
+      }
+    },
+    {
+      "name": "UnnamedStyleToken",
+      "type": "color",
+      "value": "#535353",
+      "category": "color",
+      "meta": {
+        "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+        "id": "9XP5n91I2"
+      }
+    }
+  ],
   "global": {
     "meta": {
       "source": "plasmic.app"

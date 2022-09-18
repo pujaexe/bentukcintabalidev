@@ -1,4 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&family=Great+Vibes%3Aital%2Cwght%400%2C400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700%3B0%2C900&family=Pacifico%3Aital%2Cwght%400%2C400&family=Great+Vibes%3Aital%2Cwght%400%2C400&display=swap");
+
+.plasmic_tokens {
+  --token-eCYK1bYIJ: 1rem;
+  --plasmic-token-t-1-subtitle-font-size: var(--token-eCYK1bYIJ);
+  --token-yABs3efs1: 3.5rem;
+  --plasmic-token-t-1-heading-1-font-size: var(--token-yABs3efs1);
+  --token-tzoh8lF-J: 0.88rem;
+  --plasmic-token-t-1-body-font-size: var(--token-tzoh8lF-J);
+  --token-N2rDdMwDv: 2.25rem;
+  --plasmic-token-t-1-title-font-size: var(--token-N2rDdMwDv);
+  --token-9XP5n91I2: #535353;
+  --plasmic-token-unnamed-style-token: var(--token-9XP5n91I2);
+  --token-v3lrVIrdV: 0.75rem;
+  --plasmic-token-t-1-small-font: var(--token-v3lrVIrdV);
+}
 
 .plasmic_default_styles {
   --mixin-3PmXbbSBFcer_font-family: "Poppins";

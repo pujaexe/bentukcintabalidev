@@ -37,6 +37,8 @@ import {
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
 import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 import MonthWord from "../../MonthWord"; // plasmic-import: ccyNqBOp-s/component
+import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
+import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
 
 import { useScreenVariants as useScreenVariantsqo0Z9EiWgEmol } from "../blank_project/PlasmicGlobalVariant__Screen"; // plasmic-import: Qo0Z9eiWgEMOL/globalVariant
 
@@ -44,6 +46,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: sqsUtdEY9EziH5JCt3D7uY/projectcss
 import sty from "./PlasmicTemplate1.module.css"; // plasmic-import: F6P_0Ibk5i6/css
+
+import DownIconsvgIcon from "./icons/PlasmicIcon__DownIconsvg"; // plasmic-import: yMsiz1JvvB/icon
 
 export type PlasmicTemplate1__VariantMembers = {};
 
@@ -62,32 +66,45 @@ export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicTemplate1__OverridesType = {
   root?: p.Flex<"div">;
-  graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
   hero?: p.Flex<"header">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   contentWrapper?: p.Flex<"div">;
+  h4?: p.Flex<"h4">;
   title?: p.Flex<"h1">;
   span?: p.Flex<"span">;
   date?: p.Flex<"div">;
   monthWord?: p.Flex<typeof MonthWord>;
   h2?: p.Flex<"h2">;
-  content?: p.Flex<"div">;
-  h1?: p.Flex<"h1">;
+  svg?: p.Flex<"svg">;
+  content?: p.Flex<"section">;
+  col?: p.Flex<"div">;
   detailsPengantin?: p.Flex<"div">;
-  title2?: p.Flex<"h5">;
-  title4?: p.Flex<"h5">;
-  title8?: p.Flex<"h5">;
-  title5?: p.Flex<"p">;
-  title3?: p.Flex<"h5">;
-  title6?: p.Flex<"h5">;
-  title9?: p.Flex<"h5">;
-  title7?: p.Flex<"p">;
-  row?: p.Flex<"div">;
+  imgPria?: p.Flex<typeof p.PlasmicImg>;
+  namapengantin2?: p.Flex<"h5">;
+  title4?: p.Flex<"div">;
+  title8?: p.Flex<"div">;
+  title5?: p.Flex<"div">;
+  imgWanita?: p.Flex<typeof p.PlasmicImg>;
+  namapengantin?: p.Flex<"h5">;
+  title6?: p.Flex<"div">;
+  title9?: p.Flex<"div">;
+  title7?: p.Flex<"div">;
+  rowEventDetails?: p.Flex<"div">;
   date2?: p.Flex<"div">;
   pukul?: p.Flex<"div">;
   alamat?: p.Flex<"div">;
   outro?: p.Flex<"div">;
-  h3?: p.Flex<"h3">;
+  gallery?: p.Flex<"section">;
+  titleGallery?: p.Flex<"div">;
+  doaWrapper?: p.Flex<"div">;
+  youtubeWrapper?: p.Flex<"div">;
+  youTube?: p.Flex<typeof YouTube>;
+  photoGallery?: p.Flex<"div">;
+  location?: p.Flex<"section">;
+  locationTitle?: p.Flex<"div">;
+  doaWrapper2?: p.Flex<"div">;
+  iframe?: p.Flex<typeof Iframe>;
+  buttonWrapper?: p.Flex<"div">;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultTemplate1Props {
@@ -136,13 +153,12 @@ function PlasmicTemplate1__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
         sty.root
       )}
     >
       <GraphCMSFetcher
-        data-plasmic-name={"graphCmsFetcher"}
-        data-plasmic-override={overrides.graphCmsFetcher}
-        className={classNames("__wab_instance", sty.graphCmsFetcher)}
+        className={classNames("__wab_instance", sty.graphCmsFetcher__mX05W)}
         noLayout={true}
         query={(() => {
           try {
@@ -150,7 +166,7 @@ function PlasmicTemplate1__RenderFunc(props: {
               query:
                 'query MyQuery {\n  pengantin(where: {slug: "' +
                 $props.templateSlug +
-                '"}) {\n    slug\n    title\n    eventLocation\n    evenDateTime\n    eventMap {\n      latitude\n      longitude\n    }\n    phone1\n    phone2\n    pengantinPria\n    pengantinWanita\n    bapakPria\n    bapakWanita\n    ibuPria\n    ibuWanita\n    alamatPria\n    alamatWanita\n    coverPhoto\n    youtubeUrl\n    templateUse\n  }\n}\n',
+                '"}) {\n    slug\n    title\n    eventLocation\n    gmapsEmbed\n    evenDateTime\n    eventMap {\n      latitude\n      longitude\n    }\n    phone1\n    phone2\n    pengantinPria\n    pengantinWanita\n    bapakPria\n    bapakWanita\n    ibuPria\n    ibuWanita\n    alamatPria\n    alamatWanita\n    coverPhoto\n   photoPria\n  photoWanita\n  youtubeUrl\n    templateUse\n  }\n}\n',
               variables: {}
             };
           } catch (e) {
@@ -174,10 +190,8 @@ function PlasmicTemplate1__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox__f12G)}
                   >
                     <p.PlasmicImg
-                      data-plasmic-name={"img"}
-                      data-plasmic-override={overrides.img}
                       alt={""}
-                      className={classNames(sty.img)}
+                      className={classNames(sty.img__vbp2O)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "mobileOnly")
                           ? ("100%" as const)
@@ -210,14 +224,16 @@ function PlasmicTemplate1__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.contentWrapper)}
                   >
                     <h4
+                      data-plasmic-name={"h4"}
+                      data-plasmic-override={overrides.h4}
                       className={classNames(
                         projectcss.all,
                         projectcss.h4,
                         projectcss.__wab_text,
-                        sty.h4__rtwGf
+                        sty.h4
                       )}
                     >
-                      {"Undangan Pernikahan"}
+                      {"UNDANGAN PERNIKAHAN"}
                     </h4>
 
                     <h1
@@ -304,12 +320,11 @@ function PlasmicTemplate1__RenderFunc(props: {
                         })()}
                       </h2>
 
-                      <h4
+                      <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.h4,
                           projectcss.__wab_text,
-                          sty.h4__cW7Cy
+                          sty.text__cW7Cy
                         )}
                       >
                         {(() => {
@@ -322,407 +337,736 @@ function PlasmicTemplate1__RenderFunc(props: {
                             throw e;
                           }
                         })()}
-                      </h4>
+                      </div>
                     </p.Stack>
+
+                    <DownIconsvgIcon
+                      data-plasmic-name={"svg"}
+                      data-plasmic-override={overrides.svg}
+                      className={classNames(projectcss.all, sty.svg)}
+                      role={"img"}
+                    />
                   </p.Stack>
                 </header>
               ) : null}
 
               <p.Stack
-                as={"div"}
+                as={"section"}
                 data-plasmic-name={"content"}
                 data-plasmic-override={overrides.content}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.content)}
               >
-                <h1
-                  data-plasmic-name={"h1"}
-                  data-plasmic-override={overrides.h1}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.__wab_text,
-                    sty.h1
-                  )}
-                >
-                  {"Om Swastiastu"}
-                </h1>
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___0KkBo
-                  )}
-                >
-                  {
-                    "Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya Pawiwahan (Pernikahan) Putra dan Putri kami"
-                  }
-                </div>
-
                 <p.Stack
                   as={"div"}
-                  data-plasmic-name={"detailsPengantin"}
-                  data-plasmic-override={overrides.detailsPengantin}
+                  data-plasmic-name={"col"}
+                  data-plasmic-override={overrides.col}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.detailsPengantin)}
+                  className={classNames(projectcss.all, sty.col)}
                 >
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.column__z3RX)}
-                  >
-                    <h5
-                      data-plasmic-name={"title2"}
-                      data-plasmic-override={overrides.title2}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h5,
-                        sty.title2
-                      )}
-                    >
-                      <GraphCMSField
-                        className={classNames(
-                          "__wab_instance",
-                          sty.graphCmsField__hlzwD
-                        )}
-                        path={["pengantinPria"]}
-                      />
-                    </h5>
-
-                    {true ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__s9J8X
-                        )}
-                      >
-                        <h5
-                          data-plasmic-name={"title4"}
-                          data-plasmic-override={overrides.title4}
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h5,
-                            sty.title4
-                          )}
-                        >
-                          <GraphCMSField
-                            className={classNames(
-                              "__wab_instance",
-                              sty.graphCmsField__jwmyC
-                            )}
-                            path={["bapakPria"]}
-                          />
-                        </h5>
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__e5BDj
-                          )}
-                        >
-                          {"&"}
-                        </div>
-
-                        <h5
-                          data-plasmic-name={"title8"}
-                          data-plasmic-override={overrides.title8}
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h5,
-                            sty.title8
-                          )}
-                        >
-                          <GraphCMSField
-                            className={classNames(
-                              "__wab_instance",
-                              sty.graphCmsField__hUt4V
-                            )}
-                            path={["ibuPria"]}
-                          />
-                        </h5>
-                      </div>
-                    ) : null}
-
-                    <p
-                      data-plasmic-name={"title5"}
-                      data-plasmic-override={overrides.title5}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.p,
-                        sty.title5
-                      )}
-                    >
-                      <GraphCMSField
-                        className={classNames(
-                          "__wab_instance",
-                          sty.graphCmsField__slPs
-                        )}
-                        path={["alamatWanita"]}
-                      />
-                    </p>
-                  </p.Stack>
-
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.column__vcQcb)}
-                  >
-                    <h5
-                      data-plasmic-name={"title3"}
-                      data-plasmic-override={overrides.title3}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h5,
-                        sty.title3
-                      )}
-                    >
-                      <GraphCMSField
-                        className={classNames(
-                          "__wab_instance",
-                          sty.graphCmsField__ghWjh
-                        )}
-                        path={["pengantinWanita"]}
-                      />
-                    </h5>
-
-                    {true ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__bio5P
-                        )}
-                      >
-                        <h5
-                          data-plasmic-name={"title6"}
-                          data-plasmic-override={overrides.title6}
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h5,
-                            sty.title6
-                          )}
-                        >
-                          <GraphCMSField
-                            className={classNames(
-                              "__wab_instance",
-                              sty.graphCmsField__kfbgc
-                            )}
-                            path={["bapakWanita"]}
-                          />
-                        </h5>
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__m9T9G
-                          )}
-                        >
-                          {"&"}
-                        </div>
-
-                        <h5
-                          data-plasmic-name={"title9"}
-                          data-plasmic-override={overrides.title9}
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h5,
-                            sty.title9
-                          )}
-                        >
-                          <GraphCMSField
-                            className={classNames(
-                              "__wab_instance",
-                              sty.graphCmsField__vSm1H
-                            )}
-                            path={["ibuWanita"]}
-                          />
-                        </h5>
-                      </div>
-                    ) : null}
-
-                    <p
-                      data-plasmic-name={"title7"}
-                      data-plasmic-override={overrides.title7}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.p,
-                        sty.title7
-                      )}
-                    >
-                      <GraphCMSField
-                        className={classNames(
-                          "__wab_instance",
-                          sty.graphCmsField__w1VAk
-                        )}
-                        path={["alamatWanita"]}
-                      />
-                    </p>
-                  </p.Stack>
-                </p.Stack>
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__i7Ykz
-                  )}
-                >
-                  {
-                    "Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak / Ibu / Saudara / i berkenan hadir untuk memberikan doa restu, pada:"
-                  }
-                </div>
-
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"row"}
-                  data-plasmic-override={overrides.row}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.row)}
-                >
-                  <p.Stack
-                    as={"div"}
-                    data-plasmic-name={"date2"}
-                    data-plasmic-override={overrides.date2}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.date2)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__g6Gpv
-                      )}
-                    >
-                      {"Hari/tanggal :"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__p4KTx
-                      )}
-                    >
-                      {(() => {
-                        try {
-                          return $ctx.graphCmsItem.evenDateTime.split("T")[0];
-                        } catch (e) {
-                          if (e instanceof TypeError) {
-                            return "Enter some text";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </div>
-                  </p.Stack>
-
-                  <p.Stack
-                    as={"div"}
-                    data-plasmic-name={"pukul"}
-                    data-plasmic-override={overrides.pukul}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.pukul)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__xHZo
-                      )}
-                    >
-                      {"Pukul :"}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___0UbXn
-                      )}
-                    >
-                      {(() => {
-                        try {
-                          return $ctx.graphCmsItem.evenDateTime.slice(11, 16);
-                        } catch (e) {
-                          if (e instanceof TypeError) {
-                            return "Enter some text";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___47P7E
-                      )}
-                    >
-                      {"s/d. Selesai"}
-                    </div>
-                  </p.Stack>
-
-                  <div
-                    data-plasmic-name={"alamat"}
-                    data-plasmic-override={overrides.alamat}
-                    className={classNames(projectcss.all, sty.alamat)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__vnDf4
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "Alamat : "
-                        : "Alamat : "}
-                    </div>
-
-                    <GraphCMSField
-                      className={classNames(
-                        "__wab_instance",
-                        sty.graphCmsField__jIw
-                      )}
-                      path={["eventLocation"]}
-                    />
-                  </div>
-                </p.Stack>
-
-                <div
-                  data-plasmic-name={"outro"}
-                  data-plasmic-override={overrides.outro}
-                  className={classNames(projectcss.all, sty.outro)}
-                >
-                  <div
+                  <h1
                     className={classNames(
                       projectcss.all,
+                      projectcss.h1,
                       projectcss.__wab_text,
-                      sty.text__ko7WV
+                      sty.h1__oAPaK
                     )}
                   >
-                    {
-                      "Atas Kehadiran serta doa dan restu Bapak / Ibu / Saudara / i, kami ucapkan terima kasih"
-                    }
-                  </div>
+                    {"Om Swastiastu"}
+                  </h1>
 
                   <h3
-                    data-plasmic-name={"h3"}
-                    data-plasmic-override={overrides.h3}
                     className={classNames(
                       projectcss.all,
                       projectcss.h3,
                       projectcss.__wab_text,
-                      sty.h3
+                      sty.h3__fsRdc
                     )}
                   >
-                    {"Om Shanti Shanti Shanti Om"}
+                    {"MOHON DOA RESTU"}
                   </h3>
-                </div>
+
+                  <p.Stack
+                    as={"div"}
+                    data-plasmic-name={"detailsPengantin"}
+                    data-plasmic-override={overrides.detailsPengantin}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.detailsPengantin)}
+                  >
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.column__z3RX)}
+                    >
+                      <p.PlasmicImg
+                        data-plasmic-name={"imgPria"}
+                        data-plasmic-override={overrides.imgPria}
+                        alt={""}
+                        className={classNames(sty.imgPria)}
+                        displayHeight={"200px" as const}
+                        displayMaxHeight={"none" as const}
+                        displayMaxWidth={"none" as const}
+                        displayMinHeight={"0" as const}
+                        displayMinWidth={"0" as const}
+                        displayWidth={"200px" as const}
+                        loading={"lazy" as const}
+                        src={$ctx.graphCmsItem.photoPria}
+                      />
+
+                      <h5
+                        data-plasmic-name={"namapengantin2"}
+                        data-plasmic-override={overrides.namapengantin2}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          sty.namapengantin2
+                        )}
+                      >
+                        <GraphCMSField
+                          className={classNames(
+                            "__wab_instance",
+                            sty.graphCmsField__hlzwD
+                          )}
+                          path={["pengantinPria"]}
+                        />
+                      </h5>
+
+                      {true ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__s9J8X
+                          )}
+                        >
+                          <div
+                            data-plasmic-name={"title4"}
+                            data-plasmic-override={overrides.title4}
+                            className={classNames(projectcss.all, sty.title4)}
+                          >
+                            <GraphCMSField
+                              className={classNames(
+                                "__wab_instance",
+                                sty.graphCmsField__jwmyC
+                              )}
+                              path={["bapakPria"]}
+                            />
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__e5BDj
+                            )}
+                          >
+                            {"&"}
+                          </div>
+
+                          <div
+                            data-plasmic-name={"title8"}
+                            data-plasmic-override={overrides.title8}
+                            className={classNames(projectcss.all, sty.title8)}
+                          >
+                            <GraphCMSField
+                              className={classNames(
+                                "__wab_instance",
+                                sty.graphCmsField__hUt4V
+                              )}
+                              path={["ibuPria"]}
+                            />
+                          </div>
+                        </div>
+                      ) : null}
+
+                      <div
+                        data-plasmic-name={"title5"}
+                        data-plasmic-override={overrides.title5}
+                        className={classNames(projectcss.all, sty.title5)}
+                      >
+                        <GraphCMSField
+                          className={classNames(
+                            "__wab_instance",
+                            sty.graphCmsField__slPs
+                          )}
+                          path={["alamatWanita"]}
+                        />
+                      </div>
+                    </p.Stack>
+
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.column__vcQcb)}
+                    >
+                      <p.PlasmicImg
+                        data-plasmic-name={"imgWanita"}
+                        data-plasmic-override={overrides.imgWanita}
+                        alt={""}
+                        className={classNames(sty.imgWanita)}
+                        displayHeight={"200px" as const}
+                        displayMaxHeight={"none" as const}
+                        displayMaxWidth={"none" as const}
+                        displayMinHeight={"0" as const}
+                        displayMinWidth={"0" as const}
+                        displayWidth={"200px" as const}
+                        loading={"lazy" as const}
+                        src={(() => {
+                          try {
+                            return $ctx.graphCmsItem.photoWanita;
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+
+                      <h5
+                        data-plasmic-name={"namapengantin"}
+                        data-plasmic-override={overrides.namapengantin}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h5,
+                          sty.namapengantin
+                        )}
+                      >
+                        <GraphCMSField
+                          className={classNames(
+                            "__wab_instance",
+                            sty.graphCmsField__ghWjh
+                          )}
+                          path={["pengantinWanita"]}
+                        />
+                      </h5>
+
+                      {true ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__bio5P
+                          )}
+                        >
+                          <div
+                            data-plasmic-name={"title6"}
+                            data-plasmic-override={overrides.title6}
+                            className={classNames(projectcss.all, sty.title6)}
+                          >
+                            <GraphCMSField
+                              className={classNames(
+                                "__wab_instance",
+                                sty.graphCmsField__kfbgc
+                              )}
+                              path={["bapakWanita"]}
+                            />
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__m9T9G
+                            )}
+                          >
+                            {"&"}
+                          </div>
+
+                          <div
+                            data-plasmic-name={"title9"}
+                            data-plasmic-override={overrides.title9}
+                            className={classNames(projectcss.all, sty.title9)}
+                          >
+                            <GraphCMSField
+                              className={classNames(
+                                "__wab_instance",
+                                sty.graphCmsField__vSm1H
+                              )}
+                              path={["ibuWanita"]}
+                            />
+                          </div>
+                        </div>
+                      ) : null}
+
+                      <div
+                        data-plasmic-name={"title7"}
+                        data-plasmic-override={overrides.title7}
+                        className={classNames(projectcss.all, sty.title7)}
+                      >
+                        <GraphCMSField
+                          className={classNames(
+                            "__wab_instance",
+                            sty.graphCmsField__w1VAk
+                          )}
+                          path={["alamatWanita"]}
+                        />
+                      </div>
+                    </p.Stack>
+                  </p.Stack>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___0KkBo
+                    )}
+                  >
+                    {
+                      "Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya Pawiwahan (Pernikahan) Putra dan Putri kami"
+                    }
+                  </div>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__i7Ykz
+                    )}
+                  >
+                    {
+                      "Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak / Ibu / Saudara / i berkenan hadir untuk memberikan doa restu, pada:"
+                    }
+                  </div>
+
+                  <p.Stack
+                    as={"div"}
+                    data-plasmic-name={"rowEventDetails"}
+                    data-plasmic-override={overrides.rowEventDetails}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.rowEventDetails)}
+                  >
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"date2"}
+                      data-plasmic-override={overrides.date2}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.date2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__g6Gpv
+                        )}
+                      >
+                        {"Hari/tanggal"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__it9ZT
+                        )}
+                      >
+                        {":"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__p4KTx
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return $ctx.graphCmsItem.evenDateTime.split("T")[0];
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return "Enter some text";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </div>
+                    </p.Stack>
+
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"pukul"}
+                      data-plasmic-override={overrides.pukul}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.pukul)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__xHZo
+                        )}
+                      >
+                        {"Pukul"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___2HGjF
+                        )}
+                      >
+                        {":"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___0UbXn
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return $ctx.graphCmsItem.evenDateTime.slice(11, 16);
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return "Enter some text";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___47P7E
+                        )}
+                      >
+                        {"s/d. Selesai"}
+                      </div>
+                    </p.Stack>
+
+                    <p.Stack
+                      as={"div"}
+                      data-plasmic-name={"alamat"}
+                      data-plasmic-override={overrides.alamat}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.alamat)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__vnDf4
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Alamat : "
+                          : "Alamat"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__sUmVn
+                        )}
+                      >
+                        {":"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___7V2Y7
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return $ctx.graphCmsItem.eventLocation;
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return ":";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </div>
+                    </p.Stack>
+                  </p.Stack>
+
+                  <div
+                    data-plasmic-name={"outro"}
+                    data-plasmic-override={overrides.outro}
+                    className={classNames(projectcss.all, sty.outro)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ko7WV
+                      )}
+                    >
+                      {
+                        "Atas Kehadiran serta doa dan restu Bapak / Ibu / Saudara / i, kami ucapkan terima kasih"
+                      }
+                    </div>
+
+                    <h3
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h3,
+                        projectcss.__wab_text,
+                        sty.h3__guI8Z
+                      )}
+                    >
+                      {"Om Shanti Shanti Shanti Om"}
+                    </h3>
+                  </div>
+                </p.Stack>
               </p.Stack>
+
+              <section
+                data-plasmic-name={"gallery"}
+                data-plasmic-override={overrides.gallery}
+                className={classNames(projectcss.all, sty.gallery)}
+              >
+                <div
+                  data-plasmic-name={"titleGallery"}
+                  data-plasmic-override={overrides.titleGallery}
+                  className={classNames(projectcss.all, sty.titleGallery)}
+                >
+                  <h1
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1__hydK0
+                    )}
+                  >
+                    {"Gallery"}
+                  </h1>
+                </div>
+
+                <div
+                  data-plasmic-name={"doaWrapper"}
+                  data-plasmic-override={overrides.doaWrapper}
+                  className={classNames(projectcss.all, sty.doaWrapper)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__f3O51
+                    )}
+                  >
+                    {
+                      '"Ya Tuhanku yang Maha Pengasih, anugerahkanlah kepada pasangan pengantin ini senantiasa berbahagia keduanya tiada terpisahkan, panjang umur, semoga pengantin ini dianugerahkan putra dan cucu yang memberikan penghiburan, tinggal dirumah yang penuh kebahagiaan.”'
+                    }
+                  </div>
+                </div>
+
+                <div
+                  data-plasmic-name={"youtubeWrapper"}
+                  data-plasmic-override={overrides.youtubeWrapper}
+                  className={classNames(projectcss.all, sty.youtubeWrapper)}
+                >
+                  <YouTube
+                    data-plasmic-name={"youTube"}
+                    data-plasmic-override={overrides.youTube}
+                    cc_load_policy={false}
+                    className={classNames("__wab_instance", sty.youTube)}
+                    rel={false}
+                    videoId={(() => {
+                      try {
+                        return $ctx.graphCmsItem.youtubeUrl;
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  />
+                </div>
+
+                <div
+                  data-plasmic-name={"photoGallery"}
+                  data-plasmic-override={overrides.photoGallery}
+                  className={classNames(projectcss.all, sty.photoGallery)}
+                >
+                  <GraphCMSFetcher
+                    className={classNames(
+                      "__wab_instance",
+                      sty.graphCmsFetcher___68Ojq
+                    )}
+                    noLayout={true}
+                    query={(() => {
+                      try {
+                        return {
+                          query:
+                            'query MyQuery {\n  pengantin(where: {slug: "' +
+                            $props.templateSlug +
+                            '"}) {\n    galleries {\n      photoGallery\n    }\n  }\n}\n',
+                          variables: {}
+                        };
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return {
+                            query:
+                              'query MyQuery {\n  pengantin(where: {slug: "agustika"}) {\n    galleries {\n      photoGallery\n    }\n  }\n}\n',
+                            variables: {}
+                          };
+                        }
+                        throw e;
+                      }
+                    })()}
+                  >
+                    <ph.DataCtxReader>
+                      {$ctx => (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__vrWo1
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__eNsM
+                            )}
+                          >
+                            {(() => {
+                              try {
+                                return $ctx.graphCmsItem.galleries;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return [];
+                                }
+                                throw e;
+                              }
+                            })().map((currentItem, currentIndex) => (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__ylIeB
+                                )}
+                                key={currentIndex}
+                              >
+                                <p.PlasmicImg
+                                  alt={""}
+                                  className={classNames(sty.img___08Xko)}
+                                  displayHeight={"250px" as const}
+                                  displayMaxHeight={"none" as const}
+                                  displayMaxWidth={"none" as const}
+                                  displayMinHeight={"0" as const}
+                                  displayMinWidth={"0" as const}
+                                  displayWidth={"300px" as const}
+                                  loading={"lazy" as const}
+                                  src={(() => {
+                                    try {
+                                      return $ctx.graphCmsItem.galleries[
+                                        currentIndex
+                                      ].photoGallery;
+                                    } catch (e) {
+                                      if (e instanceof TypeError) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </ph.DataCtxReader>
+                  </GraphCMSFetcher>
+                </div>
+              </section>
+
+              <section
+                data-plasmic-name={"location"}
+                data-plasmic-override={overrides.location}
+                className={classNames(projectcss.all, sty.location)}
+              >
+                <div
+                  data-plasmic-name={"locationTitle"}
+                  data-plasmic-override={overrides.locationTitle}
+                  className={classNames(projectcss.all, sty.locationTitle)}
+                >
+                  <h1
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1__pyz7Z
+                    )}
+                  >
+                    {"Location"}
+                  </h1>
+                </div>
+
+                <div
+                  data-plasmic-name={"doaWrapper2"}
+                  data-plasmic-override={overrides.doaWrapper2}
+                  className={classNames(projectcss.all, sty.doaWrapper2)}
+                >
+                  <Iframe
+                    data-plasmic-name={"iframe"}
+                    data-plasmic-override={overrides.iframe}
+                    className={classNames("__wab_instance", sty.iframe)}
+                    src={(() => {
+                      try {
+                        return $ctx.graphCmsItem.gmapsEmbed;
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "https://www.google.com/maps";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  />
+
+                  <div
+                    data-plasmic-name={"buttonWrapper"}
+                    data-plasmic-override={overrides.buttonWrapper}
+                    className={classNames(projectcss.all, sty.buttonWrapper)}
+                  >
+                    <p.PlasmicLink
+                      data-plasmic-name={"link"}
+                      data-plasmic-override={overrides.link}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        sty.link
+                      )}
+                      component={Link}
+                      href={(() => {
+                        try {
+                          return (
+                            "https://www.google.com/maps/place/" +
+                            $ctx.graphCmsItem.eventMap.latitude +
+                            "," +
+                            $ctx.graphCmsItem.eventMap.longitude
+                          );
+                        } catch (e) {
+                          if (e instanceof TypeError) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
+                      platform={"nextjs"}
+                      target={"_blank" as const}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__a5PO5
+                        )}
+                      >
+                        {"Buka Petunjuk Lokasi"}
+                      </div>
+                    </p.PlasmicLink>
+                  </div>
+                </div>
+              </section>
             </React.Fragment>
           )}
         </ph.DataCtxReader>
@@ -734,162 +1078,212 @@ function PlasmicTemplate1__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "graphCmsFetcher",
     "hero",
-    "img",
     "contentWrapper",
+    "h4",
     "title",
     "span",
     "date",
     "monthWord",
     "h2",
+    "svg",
     "content",
-    "h1",
+    "col",
     "detailsPengantin",
-    "title2",
+    "imgPria",
+    "namapengantin2",
     "title4",
     "title8",
     "title5",
-    "title3",
+    "imgWanita",
+    "namapengantin",
     "title6",
     "title9",
     "title7",
-    "row",
+    "rowEventDetails",
     "date2",
     "pukul",
     "alamat",
     "outro",
-    "h3"
-  ],
-  graphCmsFetcher: [
-    "graphCmsFetcher",
-    "hero",
-    "img",
-    "contentWrapper",
-    "title",
-    "span",
-    "date",
-    "monthWord",
-    "h2",
-    "content",
-    "h1",
-    "detailsPengantin",
-    "title2",
-    "title4",
-    "title8",
-    "title5",
-    "title3",
-    "title6",
-    "title9",
-    "title7",
-    "row",
-    "date2",
-    "pukul",
-    "alamat",
-    "outro",
-    "h3"
+    "gallery",
+    "titleGallery",
+    "doaWrapper",
+    "youtubeWrapper",
+    "youTube",
+    "photoGallery",
+    "location",
+    "locationTitle",
+    "doaWrapper2",
+    "iframe",
+    "buttonWrapper",
+    "link"
   ],
   hero: [
     "hero",
-    "img",
     "contentWrapper",
+    "h4",
     "title",
     "span",
     "date",
     "monthWord",
-    "h2"
+    "h2",
+    "svg"
   ],
-  img: ["img"],
   contentWrapper: [
     "contentWrapper",
+    "h4",
     "title",
     "span",
     "date",
     "monthWord",
-    "h2"
+    "h2",
+    "svg"
   ],
+  h4: ["h4"],
   title: ["title"],
   span: ["span"],
   date: ["date", "monthWord", "h2"],
   monthWord: ["monthWord"],
   h2: ["h2"],
+  svg: ["svg"],
   content: [
     "content",
-    "h1",
+    "col",
     "detailsPengantin",
-    "title2",
+    "imgPria",
+    "namapengantin2",
     "title4",
     "title8",
     "title5",
-    "title3",
+    "imgWanita",
+    "namapengantin",
     "title6",
     "title9",
     "title7",
-    "row",
+    "rowEventDetails",
     "date2",
     "pukul",
     "alamat",
-    "outro",
-    "h3"
+    "outro"
   ],
-  h1: ["h1"],
-  detailsPengantin: [
+  col: [
+    "col",
     "detailsPengantin",
-    "title2",
+    "imgPria",
+    "namapengantin2",
     "title4",
     "title8",
     "title5",
-    "title3",
+    "imgWanita",
+    "namapengantin",
+    "title6",
+    "title9",
+    "title7",
+    "rowEventDetails",
+    "date2",
+    "pukul",
+    "alamat",
+    "outro"
+  ],
+  detailsPengantin: [
+    "detailsPengantin",
+    "imgPria",
+    "namapengantin2",
+    "title4",
+    "title8",
+    "title5",
+    "imgWanita",
+    "namapengantin",
     "title6",
     "title9",
     "title7"
   ],
-  title2: ["title2"],
+  imgPria: ["imgPria"],
+  namapengantin2: ["namapengantin2"],
   title4: ["title4"],
   title8: ["title8"],
   title5: ["title5"],
-  title3: ["title3"],
+  imgWanita: ["imgWanita"],
+  namapengantin: ["namapengantin"],
   title6: ["title6"],
   title9: ["title9"],
   title7: ["title7"],
-  row: ["row", "date2", "pukul", "alamat"],
+  rowEventDetails: ["rowEventDetails", "date2", "pukul", "alamat"],
   date2: ["date2"],
   pukul: ["pukul"],
   alamat: ["alamat"],
-  outro: ["outro", "h3"],
-  h3: ["h3"]
+  outro: ["outro"],
+  gallery: [
+    "gallery",
+    "titleGallery",
+    "doaWrapper",
+    "youtubeWrapper",
+    "youTube",
+    "photoGallery"
+  ],
+  titleGallery: ["titleGallery"],
+  doaWrapper: ["doaWrapper"],
+  youtubeWrapper: ["youtubeWrapper", "youTube"],
+  youTube: ["youTube"],
+  photoGallery: ["photoGallery"],
+  location: [
+    "location",
+    "locationTitle",
+    "doaWrapper2",
+    "iframe",
+    "buttonWrapper",
+    "link"
+  ],
+  locationTitle: ["locationTitle"],
+  doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper", "link"],
+  iframe: ["iframe"],
+  buttonWrapper: ["buttonWrapper", "link"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  graphCmsFetcher: typeof GraphCMSFetcher;
   hero: "header";
-  img: typeof p.PlasmicImg;
   contentWrapper: "div";
+  h4: "h4";
   title: "h1";
   span: "span";
   date: "div";
   monthWord: typeof MonthWord;
   h2: "h2";
-  content: "div";
-  h1: "h1";
+  svg: "svg";
+  content: "section";
+  col: "div";
   detailsPengantin: "div";
-  title2: "h5";
-  title4: "h5";
-  title8: "h5";
-  title5: "p";
-  title3: "h5";
-  title6: "h5";
-  title9: "h5";
-  title7: "p";
-  row: "div";
+  imgPria: typeof p.PlasmicImg;
+  namapengantin2: "h5";
+  title4: "div";
+  title8: "div";
+  title5: "div";
+  imgWanita: typeof p.PlasmicImg;
+  namapengantin: "h5";
+  title6: "div";
+  title9: "div";
+  title7: "div";
+  rowEventDetails: "div";
   date2: "div";
   pukul: "div";
   alamat: "div";
   outro: "div";
-  h3: "h3";
+  gallery: "section";
+  titleGallery: "div";
+  doaWrapper: "div";
+  youtubeWrapper: "div";
+  youTube: typeof YouTube;
+  photoGallery: "div";
+  location: "section";
+  locationTitle: "div";
+  doaWrapper2: "div";
+  iframe: typeof Iframe;
+  buttonWrapper: "div";
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -953,32 +1347,45 @@ export const PlasmicTemplate1 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
     hero: makeNodeComponent("hero"),
-    img: makeNodeComponent("img"),
     contentWrapper: makeNodeComponent("contentWrapper"),
+    h4: makeNodeComponent("h4"),
     title: makeNodeComponent("title"),
     span: makeNodeComponent("span"),
     date: makeNodeComponent("date"),
     monthWord: makeNodeComponent("monthWord"),
     h2: makeNodeComponent("h2"),
+    svg: makeNodeComponent("svg"),
     content: makeNodeComponent("content"),
-    h1: makeNodeComponent("h1"),
+    col: makeNodeComponent("col"),
     detailsPengantin: makeNodeComponent("detailsPengantin"),
-    title2: makeNodeComponent("title2"),
+    imgPria: makeNodeComponent("imgPria"),
+    namapengantin2: makeNodeComponent("namapengantin2"),
     title4: makeNodeComponent("title4"),
     title8: makeNodeComponent("title8"),
     title5: makeNodeComponent("title5"),
-    title3: makeNodeComponent("title3"),
+    imgWanita: makeNodeComponent("imgWanita"),
+    namapengantin: makeNodeComponent("namapengantin"),
     title6: makeNodeComponent("title6"),
     title9: makeNodeComponent("title9"),
     title7: makeNodeComponent("title7"),
-    row: makeNodeComponent("row"),
+    rowEventDetails: makeNodeComponent("rowEventDetails"),
     date2: makeNodeComponent("date2"),
     pukul: makeNodeComponent("pukul"),
     alamat: makeNodeComponent("alamat"),
     outro: makeNodeComponent("outro"),
-    h3: makeNodeComponent("h3"),
+    gallery: makeNodeComponent("gallery"),
+    titleGallery: makeNodeComponent("titleGallery"),
+    doaWrapper: makeNodeComponent("doaWrapper"),
+    youtubeWrapper: makeNodeComponent("youtubeWrapper"),
+    youTube: makeNodeComponent("youTube"),
+    photoGallery: makeNodeComponent("photoGallery"),
+    location: makeNodeComponent("location"),
+    locationTitle: makeNodeComponent("locationTitle"),
+    doaWrapper2: makeNodeComponent("doaWrapper2"),
+    iframe: makeNodeComponent("iframe"),
+    buttonWrapper: makeNodeComponent("buttonWrapper"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicTemplate1
     internalVariantProps: PlasmicTemplate1__VariantProps,

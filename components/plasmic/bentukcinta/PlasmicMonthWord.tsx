@@ -83,7 +83,7 @@ type ArgPropType = keyof PlasmicMonthWord__ArgsType;
 export const PlasmicMonthWord__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicMonthWord__OverridesType = {
-  root?: p.Flex<"h4">;
+  root?: p.Flex<"div">;
 };
 
 export interface DefaultMonthWordProps {
@@ -130,18 +130,18 @@ function PlasmicMonthWord__RenderFunc(props: {
   };
 
   return (
-    <h4
+    <div
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
         projectcss.all,
-        projectcss.h4,
         projectcss.__wab_text,
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
         sty.root,
         {
           [sty.rootmontName_bulan10]: hasVariant(
@@ -196,7 +196,7 @@ function PlasmicMonthWord__RenderFunc(props: {
         : hasVariant(variants, "montName", "bulan1")
         ? "Jan"
         : "Month"}
-    </h4>
+    </div>
   ) as React.ReactElement | null;
 }
 
@@ -207,7 +207,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
-  root: "h4";
+  root: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";

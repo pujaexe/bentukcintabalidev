@@ -12,7 +12,9 @@
     "@plasmicapp/cli": "^0.1.186",
     "@plasmicapp/host": "^1.0.79",
     "@plasmicapp/react-web": "^0.2.110",
+    "@plasmicpkgs/plasmic-basic-components": "^0.0.84",
     "@plasmicpkgs/plasmic-graphcms": "^0.0.46",
+    "@plasmicpkgs/react-youtube": "^7.13.82",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
