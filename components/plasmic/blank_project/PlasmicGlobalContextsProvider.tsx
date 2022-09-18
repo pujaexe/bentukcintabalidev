@@ -5,22 +5,18 @@
 // Plasmic Project: sqsUtdEY9EziH5JCt3D7uY
 import * as React from "react";
 import { GraphCMSCredentialsProvider } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: hNB_eBOLhAQ/codeComponent
-import { EmbedCss } from "@plasmicpkgs/plasmic-embed-css"; // plasmic-import: qF0uJxFztB/codeComponent
 
 export interface GlobalContextsProviderProps {
   children?: React.ReactElement;
   graphCMSCredentialsProviderProps?: Partial<
     Omit<React.ComponentProps<typeof GraphCMSCredentialsProvider>, "children">
   >;
-  embedCssProps?: Partial<
-    Omit<React.ComponentProps<typeof EmbedCss>, "children">
-  >;
 }
 
 export default function GlobalContextsProvider(
   props: GlobalContextsProviderProps
 ) {
-  const { children, graphCMSCredentialsProviderProps, embedCssProps } = props;
+  const { children, graphCMSCredentialsProviderProps } = props;
 
   return (
     <GraphCMSCredentialsProvider
@@ -38,16 +34,7 @@ export default function GlobalContextsProvider(
           : ("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdjbXMtbWFpbi1wcm9kdWN0aW9uIn0.eyJ2ZXJzaW9uIjozLCJpYXQiOjE2NjMyMzgyMTYsImF1ZCI6WyJodHRwczovL2FwaS1hcC1zb3V0aGVhc3QtMi5oeWdyYXBoLmNvbS92Mi9jbDgycmtmOWsyb3J0MDF0MzdpZmRhZDY1L21hc3RlciIsIm1hbmFnZW1lbnQtbmV4dC5ncmFwaGNtcy5jb20iXSwiaXNzIjoiaHR0cHM6Ly9tYW5hZ2VtZW50LmdyYXBoY21zLmNvbS8iLCJzdWIiOiJmZGQ2MWYwNS0wNTVhLTRmYzUtYjc4MC02Yjc3MmM1YjE1MTciLCJqdGkiOiJjbDgyeDM5Y2cwOHR3MDF0MzkyYWZndDFxIn0.xX5MTdp4KTeR8n9WpAao3aElZOqnR530tUIh45EffqYmQD8ElomEMwJq9n-RtvoDy25nueyDU7_nsySLjRV-xiCD4WYDVETcnvOqNu_l3QlfMxFvIvMVQj7Qm9z9T56D_humi-VMAIwKHx4jPfuhenD1np5l1nkw4dfU-GdIU2PRK5wETddBqykzaCoMp8yTtawDMG2YgIhgPN4iqiesRf73JYPy9cGUHJXezrGnh6t3hOElNhDpLh6vWXgKrjBKxpbf6wI4HBspPt0ElJ268zFsMEoh0UlkktXiPCgi7uEljxUA1TwomMSEpG-wnG1v5yj-as0DJ09TDFrllUpfWpdRKGRpnAE7lsgSAXWyp3AUVxsdCMnpP7A0UENk9EiSWVx8aTYPX-CFw_avlZCTmt6mrNZIOByzKk7XnOYcA3LUsCVfCrthndt3UIg8vlE2xCWyH3eLIi4DjGGCD2KW8-9fNFsqZBt6t5t-y1ZTXgdL4kuN_dYUT7Wlwe0GSPmPZx3e8C264Cga-Lu66zSJV8ikliW3najMlkzDcXyY2pSeBNLwkbDFVd1RCSe_J6M4sd0f0ftqUp37l-m8XZxQ06bFRULcMrikruG9cynalbiZWVrzXCNx36HOWra1MKR-ioaKli0iBTN2tE94IbRnHFyRnQYKgHiQkT3g2rvnMyQ" as const)
       }
     >
-      <EmbedCss
-        {...embedCssProps}
-        css={
-          embedCssProps && "css" in embedCssProps
-            ? embedCssProps.css!
-            : ("/* CSS snippet */\n#myImg {\n  border-radius: 5px;\n  cursor: pointer;\n  transition: 0.3s;\n}\n\n#myImg:hover {opacity: 0.7;}\n\n/* The Modal (background) */\n.modal {\n  display: none; /* Hidden by default */\n  position: fixed; /* Stay in place */\n  z-index: 1; /* Sit on top */\n  padding-top: 100px; /* Location of the box */\n  left: 0;\n  top: 0;\n  width: 100%; /* Full width */\n  height: 100%; /* Full height */\n  overflow: auto; /* Enable scroll if needed */\n  background-color: rgb(0,0,0); /* Fallback color */\n  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */\n}\n\n/* Modal Content (image) */\n.modal-content {\n  margin: auto;\n  display: block;\n  width: 80%;\n  max-width: 700px;\n}\n\n/* Caption of Modal Image */\n#caption {\n  margin: auto;\n  display: block;\n  width: 80%;\n  max-width: 700px;\n  text-align: center;\n  color: #ccc;\n  padding: 10px 0;\n  height: 150px;\n}\n\n/* Add Animation */\n.modal-content, #caption {  \n  -webkit-animation-name: zoom;\n  -webkit-animation-duration: 0.6s;\n  animation-name: zoom;\n  animation-duration: 0.6s;\n}\n\n@-webkit-keyframes zoom {\n  from {-webkit-transform:scale(0)} \n  to {-webkit-transform:scale(1)}\n}\n\n@keyframes zoom {\n  from {transform:scale(0)} \n  to {transform:scale(1)}\n}\n\n/* The Close Button */\n.close {\n  position: absolute;\n  top: 15px;\n  right: 35px;\n  color: #f1f1f1;\n  font-size: 40px;\n  font-weight: bold;\n  transition: 0.3s;\n}\n\n.close:hover,\n.close:focus {\n  color: #bbb;\n  text-decoration: none;\n  cursor: pointer;\n}\n\n/* 100% Image Width on Smaller Screens */\n@media only screen and (max-width: 700px){\n  .modal-content {\n    width: 100%;\n  }\n}" as const)
-        }
-      >
-        {children}
-      </EmbedCss>
+      {children}
     </GraphCMSCredentialsProvider>
   );
 }
