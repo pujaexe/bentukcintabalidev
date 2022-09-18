@@ -38,6 +38,7 @@ import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-impo
 import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 import MonthWord from "../../MonthWord"; // plasmic-import: ccyNqBOp-s/component
 import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
 
 import { useScreenVariants as useScreenVariantsqo0Z9EiWgEmol } from "../blank_project/PlasmicGlobalVariant__Screen"; // plasmic-import: Qo0Z9eiWgEMOL/globalVariant
@@ -99,6 +100,7 @@ export type PlasmicTemplate1__OverridesType = {
   youtubeWrapper?: p.Flex<"div">;
   youTube?: p.Flex<typeof YouTube>;
   photoGallery?: p.Flex<"div">;
+  embedHtml?: p.Flex<typeof Embed>;
   location?: p.Flex<"section">;
   locationTitle?: p.Flex<"div">;
   doaWrapper2?: p.Flex<"div">;
@@ -955,6 +957,7 @@ function PlasmicTemplate1__RenderFunc(props: {
                                   displayMinHeight={"0" as const}
                                   displayMinWidth={"0" as const}
                                   displayWidth={"300px" as const}
+                                  id={"myImg" as const}
                                   loading={"lazy" as const}
                                   src={(() => {
                                     try {
@@ -972,6 +975,18 @@ function PlasmicTemplate1__RenderFunc(props: {
                               </div>
                             ))}
                           </div>
+
+                          <Embed
+                            data-plasmic-name={"embedHtml"}
+                            data-plasmic-override={overrides.embedHtml}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.embedHtml
+                            )}
+                            code={
+                              '<div id="myModal" class="modal">\n  <span class="close">&times;</span>\n  <img class="modal-content" id="img01">\n  <div id="caption"></div>\n</div>\n\n<script>\n// Get the modal\nvar modal = document.getElementById("myModal");\n\n// Get the image and insert it inside the modal - use its "alt" text as a caption\nvar img = document.getElementById("myImg");\nvar modalImg = document.getElementById("img01");\nvar captionText = document.getElementById("caption");\nimg.onclick = function(){\n  modal.style.display = "block";\n  modalImg.src = this.src;\n  captionText.innerHTML = this.alt;\n}\n\n// Get the <span> element that closes the modal\nvar span = document.getElementsByClassName("close")[0];\n\n// When the user clicks on <span> (x), close the modal\nspan.onclick = function() { \n  modal.style.display = "none";\n}\n</script>' as const
+                            }
+                          />
                         </div>
                       )}
                     </ph.DataCtxReader>
@@ -1111,6 +1126,7 @@ const PlasmicDescendants = {
     "youtubeWrapper",
     "youTube",
     "photoGallery",
+    "embedHtml",
     "location",
     "locationTitle",
     "doaWrapper2",
@@ -1219,13 +1235,15 @@ const PlasmicDescendants = {
     "doaWrapper",
     "youtubeWrapper",
     "youTube",
-    "photoGallery"
+    "photoGallery",
+    "embedHtml"
   ],
   titleGallery: ["titleGallery"],
   doaWrapper: ["doaWrapper"],
   youtubeWrapper: ["youtubeWrapper", "youTube"],
   youTube: ["youTube"],
-  photoGallery: ["photoGallery"],
+  photoGallery: ["photoGallery", "embedHtml"],
+  embedHtml: ["embedHtml"],
   location: [
     "location",
     "locationTitle",
@@ -1278,6 +1296,7 @@ type NodeDefaultElementType = {
   youtubeWrapper: "div";
   youTube: typeof YouTube;
   photoGallery: "div";
+  embedHtml: typeof Embed;
   location: "section";
   locationTitle: "div";
   doaWrapper2: "div";
@@ -1380,6 +1399,7 @@ export const PlasmicTemplate1 = Object.assign(
     youtubeWrapper: makeNodeComponent("youtubeWrapper"),
     youTube: makeNodeComponent("youTube"),
     photoGallery: makeNodeComponent("photoGallery"),
+    embedHtml: makeNodeComponent("embedHtml"),
     location: makeNodeComponent("location"),
     locationTitle: makeNodeComponent("locationTitle"),
     doaWrapper2: makeNodeComponent("doaWrapper2"),

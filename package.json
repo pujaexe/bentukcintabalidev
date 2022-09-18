@@ -13,6 +13,7 @@
     "@plasmicapp/host": "^1.0.79",
     "@plasmicapp/react-web": "^0.2.110",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.84",
+    "@plasmicpkgs/plasmic-embed-css": "^0.1.63",
     "@plasmicpkgs/plasmic-graphcms": "^0.0.46",
     "@plasmicpkgs/react-youtube": "^7.13.82",
     "next": "12.3.0",

@@ -565,6 +565,11 @@
   resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-basic-components/-/plasmic-basic-components-0.0.84.tgz#05cebd5cef5ec0f66ecf44ca65f13734ed243fe7"
   integrity sha512-5zCcqEiOpUyqq46MAEKFpmmyDrVGucpX/ZHUiBR+zsw7zffGcR8jNwY+AYWU3HqVnKsDrnPv0fvQr5ckMWpTvg==
 
+"@plasmicpkgs/plasmic-embed-css@^0.1.63":
+  version "0.1.63"
+  resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-embed-css/-/plasmic-embed-css-0.1.63.tgz#ab948519f9ab06ff87f8fdd77167ab954e770e4e"
+  integrity sha512-NuuGvW1a4Ikq9PBVZg8cxinpM4hFPQ+XwHZkfbns1AYvIIVVsNY930jhL2IFawXvjloKPwaiLAIHRwZNalHjBw==
+
 "@plasmicpkgs/plasmic-graphcms@^0.0.46":
   version "0.0.46"
   resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-graphcms/-/plasmic-graphcms-0.0.46.tgz#4d3e4246861e6290a3fd2f6d51586f1e17465c58"
