@@ -36,6 +36,7 @@ import {
 } from "@plasmicapp/react-web";
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
 import { PlasmicHead } from "@plasmicapp/react-web"; // plasmic-import: wPGZWqMTEY/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 import Layout from "../../Layout"; // plasmic-import: KyRWDtnvsi/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -57,7 +58,9 @@ export type PlasmicInvitationPage__OverridesType = {
   root?: p.Flex<"div">;
   graphCmsFetcher?: p.Flex<typeof GraphCMSFetcher>;
   head?: p.Flex<typeof PlasmicHead>;
+  jsdelivercss?: p.Flex<typeof Embed>;
   layout?: p.Flex<typeof Layout>;
+  jsfancybox?: p.Flex<typeof Embed>;
 };
 
 export interface DefaultInvitationPageProps {}
@@ -144,6 +147,7 @@ function PlasmicInvitationPage__RenderFunc(props: {
                   <PlasmicHead
                     data-plasmic-name={"head"}
                     data-plasmic-override={overrides.head}
+                    canonical={"" as const}
                     className={classNames("__wab_instance", sty.head)}
                     description={"Undanga Online Bentuk Cinta" as const}
                     title={(() => {
@@ -156,6 +160,15 @@ function PlasmicInvitationPage__RenderFunc(props: {
                         throw e;
                       }
                     })()}
+                  />
+
+                  <Embed
+                    data-plasmic-name={"jsdelivercss"}
+                    data-plasmic-override={overrides.jsdelivercss}
+                    className={classNames("__wab_instance", sty.jsdelivercss)}
+                    code={
+                      '<link\n      rel="stylesheet"\n      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"\n/>' as const
+                    }
                   />
 
                   <Layout
@@ -174,6 +187,15 @@ function PlasmicInvitationPage__RenderFunc(props: {
                     })()}
                     template={$ctx.graphCmsItem.templateUse}
                   />
+
+                  <Embed
+                    data-plasmic-name={"jsfancybox"}
+                    data-plasmic-override={overrides.jsfancybox}
+                    className={classNames("__wab_instance", sty.jsfancybox)}
+                    code={
+                      '<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>\n    <script>\n      Fancybox.bind(\'[data-fancybox="gallery"]\', {\n        infinite: false\n      });\n</script>' as const
+                    }
+                  />
                 </React.Fragment>
               )}
             </ph.DataCtxReader>
@@ -185,10 +207,25 @@ function PlasmicInvitationPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "graphCmsFetcher", "head", "layout"],
-  graphCmsFetcher: ["graphCmsFetcher", "head", "layout"],
+  root: [
+    "root",
+    "graphCmsFetcher",
+    "head",
+    "jsdelivercss",
+    "layout",
+    "jsfancybox"
+  ],
+  graphCmsFetcher: [
+    "graphCmsFetcher",
+    "head",
+    "jsdelivercss",
+    "layout",
+    "jsfancybox"
+  ],
   head: ["head"],
-  layout: ["layout"]
+  jsdelivercss: ["jsdelivercss"],
+  layout: ["layout"],
+  jsfancybox: ["jsfancybox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -197,7 +234,9 @@ type NodeDefaultElementType = {
   root: "div";
   graphCmsFetcher: typeof GraphCMSFetcher;
   head: typeof PlasmicHead;
+  jsdelivercss: typeof Embed;
   layout: typeof Layout;
+  jsfancybox: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -263,7 +302,9 @@ export const PlasmicInvitationPage = Object.assign(
     // Helper components rendering sub-elements
     graphCmsFetcher: makeNodeComponent("graphCmsFetcher"),
     head: makeNodeComponent("head"),
+    jsdelivercss: makeNodeComponent("jsdelivercss"),
     layout: makeNodeComponent("layout"),
+    jsfancybox: makeNodeComponent("jsfancybox"),
 
     // Metadata about props expected for PlasmicInvitationPage
     internalVariantProps: PlasmicInvitationPage__VariantProps,

@@ -104,7 +104,6 @@ export type PlasmicTemplate1__OverridesType = {
   doaWrapper2?: p.Flex<"div">;
   iframe?: p.Flex<typeof Iframe>;
   buttonWrapper?: p.Flex<"div">;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultTemplate1Props {
@@ -946,21 +945,17 @@ function PlasmicTemplate1__RenderFunc(props: {
                                 )}
                                 key={currentIndex}
                               >
-                                <p.PlasmicImg
-                                  alt={""}
-                                  className={classNames(sty.img___08Xko)}
-                                  displayHeight={"250px" as const}
-                                  displayMaxHeight={"none" as const}
-                                  displayMaxWidth={"none" as const}
-                                  displayMinHeight={"0" as const}
-                                  displayMinWidth={"0" as const}
-                                  displayWidth={"300px" as const}
-                                  loading={"lazy" as const}
-                                  src={(() => {
+                                <p.PlasmicLink
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.a,
+                                    sty.link__jgih5
+                                  )}
+                                  component={Link}
+                                  data-fancybox={"gallery" as const}
+                                  data-src={(() => {
                                     try {
-                                      return $ctx.graphCmsItem.galleries[
-                                        currentIndex
-                                      ].photoGallery;
+                                      return currentItem.photoGallery;
                                     } catch (e) {
                                       if (e instanceof TypeError) {
                                         return undefined;
@@ -968,7 +963,32 @@ function PlasmicTemplate1__RenderFunc(props: {
                                       throw e;
                                     }
                                   })()}
-                                />
+                                  platform={"nextjs"}
+                                >
+                                  <p.PlasmicImg
+                                    alt={""}
+                                    className={classNames(sty.img___08Xko)}
+                                    displayHeight={"250px" as const}
+                                    displayMaxHeight={"none" as const}
+                                    displayMaxWidth={"none" as const}
+                                    displayMinHeight={"0" as const}
+                                    displayMinWidth={"0" as const}
+                                    displayWidth={"300px" as const}
+                                    loading={"lazy" as const}
+                                    src={(() => {
+                                      try {
+                                        return $ctx.graphCmsItem.galleries[
+                                          currentIndex
+                                        ].photoGallery;
+                                      } catch (e) {
+                                        if (e instanceof TypeError) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  />
+                                </p.PlasmicLink>
                               </div>
                             ))}
                           </div>
@@ -1028,12 +1048,10 @@ function PlasmicTemplate1__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.buttonWrapper)}
                   >
                     <p.PlasmicLink
-                      data-plasmic-name={"link"}
-                      data-plasmic-override={overrides.link}
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
-                        sty.link
+                        sty.link__ppNrE
                       )}
                       component={Link}
                       href={(() => {
@@ -1115,8 +1133,7 @@ const PlasmicDescendants = {
     "locationTitle",
     "doaWrapper2",
     "iframe",
-    "buttonWrapper",
-    "link"
+    "buttonWrapper"
   ],
   hero: [
     "hero",
@@ -1231,14 +1248,12 @@ const PlasmicDescendants = {
     "locationTitle",
     "doaWrapper2",
     "iframe",
-    "buttonWrapper",
-    "link"
+    "buttonWrapper"
   ],
   locationTitle: ["locationTitle"],
-  doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper", "link"],
+  doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper"],
   iframe: ["iframe"],
-  buttonWrapper: ["buttonWrapper", "link"],
-  link: ["link"]
+  buttonWrapper: ["buttonWrapper"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1283,7 +1298,6 @@ type NodeDefaultElementType = {
   doaWrapper2: "div";
   iframe: typeof Iframe;
   buttonWrapper: "div";
-  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1385,7 +1399,6 @@ export const PlasmicTemplate1 = Object.assign(
     doaWrapper2: makeNodeComponent("doaWrapper2"),
     iframe: makeNodeComponent("iframe"),
     buttonWrapper: makeNodeComponent("buttonWrapper"),
-    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicTemplate1
     internalVariantProps: PlasmicTemplate1__VariantProps,

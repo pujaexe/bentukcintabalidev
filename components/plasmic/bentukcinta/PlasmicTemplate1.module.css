@@ -984,8 +984,11 @@
   align-items: center;
   padding: 0px;
 }
-.img___08Xko {
+.link__jgih5 {
   position: relative;
+  display: flex;
+}
+.img___08Xko {
   object-fit: cover;
   width: 300px;
   height: 250px;
@@ -1061,7 +1064,7 @@
   min-width: 0;
   padding: 24px 8px 8px;
 }
-.link {
+.link__ppNrE {
   display: flex;
   position: relative;
   flex-direction: row;
