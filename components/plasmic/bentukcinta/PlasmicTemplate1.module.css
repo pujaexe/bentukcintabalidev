@@ -286,6 +286,7 @@
   height: auto;
   max-width: 800px;
   letter-spacing: 0px;
+  color: #ffa200;
   min-width: 0;
 }
 .h3__fsRdc {
@@ -847,6 +848,7 @@
   padding-top: 2rem;
   text-align: center;
   letter-spacing: 0px;
+  color: #ffa200;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .h3__guI8Z {
@@ -891,6 +893,7 @@
   height: auto;
   max-width: 800px;
   letter-spacing: 0px;
+  color: #ffa200;
   min-width: 0;
 }
 .doaWrapper {
@@ -1049,6 +1052,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  background: #001712;
   min-width: 0;
   padding: 9rem 0px;
 }
@@ -1079,6 +1083,7 @@
   height: auto;
   max-width: 800px;
   letter-spacing: 0px;
+  color: #ffffff;
   min-width: 0;
 }
 .doaWrapper2 {
@@ -1122,7 +1127,7 @@
   height: auto;
   max-width: 100%;
   color: #ffffff;
-  background: #ffce00;
+  background: #ffa200;
   border-radius: 12px;
   padding: 16px 24px;
 }
@@ -1132,4 +1137,21 @@
   height: auto;
   max-width: 800px;
   min-width: 0;
+}
+.freeBox__rAgOb {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 32px 8px 8px;
+}
+.embedHtml:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
 }

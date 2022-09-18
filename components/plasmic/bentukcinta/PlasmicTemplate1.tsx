@@ -39,6 +39,7 @@ import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import
 import MonthWord from "../../MonthWord"; // plasmic-import: ccyNqBOp-s/component
 import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 
 import { useScreenVariants as useScreenVariantsqo0Z9EiWgEmol } from "../blank_project/PlasmicGlobalVariant__Screen"; // plasmic-import: Qo0Z9eiWgEMOL/globalVariant
 
@@ -104,6 +105,7 @@ export type PlasmicTemplate1__OverridesType = {
   doaWrapper2?: p.Flex<"div">;
   iframe?: p.Flex<typeof Iframe>;
   buttonWrapper?: p.Flex<"div">;
+  embedHtml?: p.Flex<typeof Embed>;
 };
 
 export interface DefaultTemplate1Props {
@@ -1091,6 +1093,19 @@ function PlasmicTemplate1__RenderFunc(props: {
                       </div>
                     </p.PlasmicLink>
                   </div>
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__rAgOb)}
+                  >
+                    <Embed
+                      data-plasmic-name={"embedHtml"}
+                      data-plasmic-override={overrides.embedHtml}
+                      className={classNames("__wab_instance", sty.embedHtml)}
+                      code={
+                        '<audio id="audio" autoplay controls loop>\n    <source src="https://www.bentukcinta.com/depurnapasir/music/song.mp3">\n</audio>\n\n\n <script type="text/javascript">\n      $(\'.carousel\').carousel({\n      interval: 10000,\n      pause: false\n      })\n      </script>\n      <script type="text/javascript">\n      AOS.init({duration: 1000});\n      </script>\n      <script>\n      $(document).ready(function(){\n      $("#myModal").modal(\'show\');\n      });\n      </script>\n      <script type="text/javascript">\n        document.addEventListener(\'click\', musicPlay);\n        function musicPlay() {\n            document.getElementById(\'audio\').play();\n            document.removeEventListener(\'click\', musicPlay);\n        }\n        </script>' as const
+                      }
+                    />
+                  </div>
                 </div>
               </section>
             </React.Fragment>
@@ -1141,7 +1156,8 @@ const PlasmicDescendants = {
     "locationTitle",
     "doaWrapper2",
     "iframe",
-    "buttonWrapper"
+    "buttonWrapper",
+    "embedHtml"
   ],
   hero: [
     "hero",
@@ -1256,12 +1272,14 @@ const PlasmicDescendants = {
     "locationTitle",
     "doaWrapper2",
     "iframe",
-    "buttonWrapper"
+    "buttonWrapper",
+    "embedHtml"
   ],
   locationTitle: ["locationTitle"],
-  doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper"],
+  doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper", "embedHtml"],
   iframe: ["iframe"],
-  buttonWrapper: ["buttonWrapper"]
+  buttonWrapper: ["buttonWrapper"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1306,6 +1324,7 @@ type NodeDefaultElementType = {
   doaWrapper2: "div";
   iframe: typeof Iframe;
   buttonWrapper: "div";
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1407,6 +1426,7 @@ export const PlasmicTemplate1 = Object.assign(
     doaWrapper2: makeNodeComponent("doaWrapper2"),
     iframe: makeNodeComponent("iframe"),
     buttonWrapper: makeNodeComponent("buttonWrapper"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicTemplate1
     internalVariantProps: PlasmicTemplate1__VariantProps,
