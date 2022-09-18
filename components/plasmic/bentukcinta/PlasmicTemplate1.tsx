@@ -1102,7 +1102,7 @@ function PlasmicTemplate1__RenderFunc(props: {
                       data-plasmic-override={overrides.embedHtml}
                       className={classNames("__wab_instance", sty.embedHtml)}
                       code={
-                        '<audio id="audio" autoplay controls loop>\n    <source src="https://www.bentukcinta.com/depurnapasir/music/song.mp3">\n</audio>\n\n\n <script type="text/javascript">\n      $(\'.carousel\').carousel({\n      interval: 10000,\n      pause: false\n      })\n      </script>\n      <script type="text/javascript">\n      AOS.init({duration: 1000});\n      </script>\n      <script>\n      $(document).ready(function(){\n      $("#myModal").modal(\'show\');\n      });\n      </script>\n      <script type="text/javascript">\n        document.addEventListener(\'click\', musicPlay);\n        function musicPlay() {\n            document.getElementById(\'audio\').play();\n            document.removeEventListener(\'click\', musicPlay);\n        }\n        </script>' as const
+                        '<audio id="audio" autoplay controls loop>\n    <source src="https://www.bentukcinta.com/depurnapasir/music/song.mp3">\n</audio>\n\n\n\n\n<script type="text/javascript">\nwindow.onload=function(){\n    document.getElementById("audio").play();\n  }\n</script>' as const
                       }
                     />
                   </div>
