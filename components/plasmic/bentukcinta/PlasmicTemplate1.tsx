@@ -1431,6 +1431,15 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   return func;
 }
 
+useEffect(() => {
+
+  const element = document.getElementById("closeDialogBtn");
+  element.addEventListener("click", function() {
+  document.getElementById("dialogoverlay")?.style.visibility="hidden";
+  });
+
+});
+
 export const PlasmicTemplate1 = Object.assign(
   // Top-level PlasmicTemplate1 renders the root element
   makeNodeComponent("root"),
