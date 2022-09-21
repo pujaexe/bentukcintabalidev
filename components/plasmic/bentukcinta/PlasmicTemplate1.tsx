@@ -52,7 +52,6 @@ import projectcss from "../blank_project/plasmic_blank_project.module.css"; // p
 import sty from "./PlasmicTemplate1.module.css"; // plasmic-import: F6P_0Ibk5i6/css
 
 import DownIconsvgIcon from "./icons/PlasmicIcon__DownIconsvg"; // plasmic-import: yMsiz1JvvB/icon
-import PlasmicDialogOverlay from "./PlasmicDialogOverlay";
 
 export type PlasmicTemplate1__VariantMembers = {};
 
@@ -111,7 +110,6 @@ export type PlasmicTemplate1__OverridesType = {
   doaWrapper2?: p.Flex<"div">;
   iframe?: p.Flex<typeof Iframe>;
   buttonWrapper?: p.Flex<"div">;
-  embedHtml?: p.Flex<typeof Embed>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -1132,9 +1130,10 @@ function PlasmicTemplate1__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox__rAgOb)}
                   >
                     <Embed
-                      data-plasmic-name={"embedHtml"}
-                      data-plasmic-override={overrides.embedHtml}
-                      className={classNames("__wab_instance", sty.embedHtml)}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.embedHtml__ueJfw
+                      )}
                       code={
                         '<audio id="audio" controls loop>\n    <source src="https://www.bentukcinta.com/depurnapasir/music/song.mp3">\n</audio>\n\n\n\n\n<script type="text/javascript">\nwindow.onload=function(){\n    document.getElementById("audio").play();\n  }\n</script>' as const
                       }
@@ -1152,6 +1151,13 @@ function PlasmicTemplate1__RenderFunc(props: {
           )}
         </ph.DataCtxReader>
       </GraphCMSFetcher>
+
+      <Embed
+        className={classNames("__wab_instance", sty.embedHtml___48Kro)}
+        code={
+          '<script>\nconst element = document.getElementById("closeDialogBtn");\nelement.addEventListener("click", function() {\n  document.getElementById("dialogoverlay").style.visibility="hidden";\n});\n</script>' as const
+        }
+      />
     </div>
   ) as React.ReactElement | null;
 }
@@ -1199,7 +1205,6 @@ const PlasmicDescendants = {
     "doaWrapper2",
     "iframe",
     "buttonWrapper",
-    "embedHtml",
     "footer"
   ],
   dialogOverlay: ["dialogOverlay"],
@@ -1317,14 +1322,12 @@ const PlasmicDescendants = {
     "locationTitle",
     "doaWrapper2",
     "iframe",
-    "buttonWrapper",
-    "embedHtml"
+    "buttonWrapper"
   ],
   locationTitle: ["locationTitle"],
-  doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper", "embedHtml"],
+  doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper"],
   iframe: ["iframe"],
   buttonWrapper: ["buttonWrapper"],
-  embedHtml: ["embedHtml"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1372,7 +1375,6 @@ type NodeDefaultElementType = {
   doaWrapper2: "div";
   iframe: typeof Iframe;
   buttonWrapper: "div";
-  embedHtml: typeof Embed;
   footer: typeof Footer;
 };
 
@@ -1432,8 +1434,6 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   return func;
 }
 
-
-
 export const PlasmicTemplate1 = Object.assign(
   // Top-level PlasmicTemplate1 renders the root element
   makeNodeComponent("root"),
@@ -1479,7 +1479,6 @@ export const PlasmicTemplate1 = Object.assign(
     doaWrapper2: makeNodeComponent("doaWrapper2"),
     iframe: makeNodeComponent("iframe"),
     buttonWrapper: makeNodeComponent("buttonWrapper"),
-    embedHtml: makeNodeComponent("embedHtml"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicTemplate1

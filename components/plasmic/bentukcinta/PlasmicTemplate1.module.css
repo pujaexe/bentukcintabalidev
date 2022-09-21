@@ -1165,7 +1165,7 @@
   min-width: 0;
   padding: 32px 8px 8px;
 }
-.embedHtml:global(.__wab_instance) {
+.embedHtml__ueJfw:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
@@ -1175,4 +1175,11 @@
   position: relative;
   left: auto;
   top: auto;
+}
+.embedHtml___48Kro:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
