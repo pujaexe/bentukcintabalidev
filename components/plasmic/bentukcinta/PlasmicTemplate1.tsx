@@ -34,12 +34,15 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import DialogOverlay from "../../DialogOverlay"; // plasmic-import: UKDNwKMUKx/component
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
+import FloatingWhatsapp from "../../FloatingWhatsapp"; // plasmic-import: -6rOvsYjub/component
 import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 import MonthWord from "../../MonthWord"; // plasmic-import: ccyNqBOp-s/component
 import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
+import Footer from "../../Footer"; // plasmic-import: fuuTwrOwBL/component
 
 import { useScreenVariants as useScreenVariantsqo0Z9EiWgEmol } from "../blank_project/PlasmicGlobalVariant__Screen"; // plasmic-import: Qo0Z9eiWgEMOL/globalVariant
 
@@ -67,6 +70,8 @@ export const PlasmicTemplate1__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicTemplate1__OverridesType = {
   root?: p.Flex<"div">;
+  dialogOverlay?: p.Flex<typeof DialogOverlay>;
+  floatingWhatsapp?: p.Flex<typeof FloatingWhatsapp>;
   hero?: p.Flex<"header">;
   contentWrapper?: p.Flex<"div">;
   h4?: p.Flex<"h4">;
@@ -106,6 +111,7 @@ export type PlasmicTemplate1__OverridesType = {
   iframe?: p.Flex<typeof Iframe>;
   buttonWrapper?: p.Flex<"div">;
   embedHtml?: p.Flex<typeof Embed>;
+  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultTemplate1Props {
@@ -157,7 +163,14 @@ function PlasmicTemplate1__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root
       )}
+      id={"body-template1" as const}
     >
+      <DialogOverlay
+        data-plasmic-name={"dialogOverlay"}
+        data-plasmic-override={overrides.dialogOverlay}
+        className={classNames("__wab_instance", sty.dialogOverlay)}
+      />
+
       <GraphCMSFetcher
         className={classNames("__wab_instance", sty.graphCmsFetcher__mX05W)}
         noLayout={true}
@@ -181,6 +194,26 @@ function PlasmicTemplate1__RenderFunc(props: {
         <ph.DataCtxReader>
           {$ctx => (
             <React.Fragment>
+              <FloatingWhatsapp
+                data-plasmic-name={"floatingWhatsapp"}
+                data-plasmic-override={overrides.floatingWhatsapp}
+                className={classNames("__wab_instance", sty.floatingWhatsapp)}
+                whatsappLink={(() => {
+                  try {
+                    return (
+                      "https://api.whatsapp.com/send?phone=" +
+                      $ctx.graphCmsItem.phone1 +
+                      "%20&text=Hi,%20ini%20pesan%20dari%20undangan%20online%20mu."
+                    );
+                  } catch (e) {
+                    if (e instanceof TypeError) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+
               {true ? (
                 <header
                   data-plasmic-name={"hero"}
@@ -1108,6 +1141,12 @@ function PlasmicTemplate1__RenderFunc(props: {
                   </div>
                 </div>
               </section>
+
+              <Footer
+                data-plasmic-name={"footer"}
+                data-plasmic-override={overrides.footer}
+                className={classNames("__wab_instance", sty.footer)}
+              />
             </React.Fragment>
           )}
         </ph.DataCtxReader>
@@ -1119,6 +1158,8 @@ function PlasmicTemplate1__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "dialogOverlay",
+    "floatingWhatsapp",
     "hero",
     "contentWrapper",
     "h4",
@@ -1157,8 +1198,11 @@ const PlasmicDescendants = {
     "doaWrapper2",
     "iframe",
     "buttonWrapper",
-    "embedHtml"
+    "embedHtml",
+    "footer"
   ],
+  dialogOverlay: ["dialogOverlay"],
+  floatingWhatsapp: ["floatingWhatsapp"],
   hero: [
     "hero",
     "contentWrapper",
@@ -1279,13 +1323,16 @@ const PlasmicDescendants = {
   doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper", "embedHtml"],
   iframe: ["iframe"],
   buttonWrapper: ["buttonWrapper"],
-  embedHtml: ["embedHtml"]
+  embedHtml: ["embedHtml"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  dialogOverlay: typeof DialogOverlay;
+  floatingWhatsapp: typeof FloatingWhatsapp;
   hero: "header";
   contentWrapper: "div";
   h4: "h4";
@@ -1325,6 +1372,7 @@ type NodeDefaultElementType = {
   iframe: typeof Iframe;
   buttonWrapper: "div";
   embedHtml: typeof Embed;
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1388,6 +1436,8 @@ export const PlasmicTemplate1 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    dialogOverlay: makeNodeComponent("dialogOverlay"),
+    floatingWhatsapp: makeNodeComponent("floatingWhatsapp"),
     hero: makeNodeComponent("hero"),
     contentWrapper: makeNodeComponent("contentWrapper"),
     h4: makeNodeComponent("h4"),
@@ -1427,6 +1477,7 @@ export const PlasmicTemplate1 = Object.assign(
     iframe: makeNodeComponent("iframe"),
     buttonWrapper: makeNodeComponent("buttonWrapper"),
     embedHtml: makeNodeComponent("embedHtml"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicTemplate1
     internalVariantProps: PlasmicTemplate1__VariantProps,

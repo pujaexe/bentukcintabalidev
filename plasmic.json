@@ -148,6 +148,32 @@
           "cssFilePath": "plasmic/bentukcinta/PlasmicFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "-6rOvsYjub",
+          "name": "FloatingWhatsapp",
+          "type": "managed",
+          "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicFloatingWhatsapp.tsx",
+          "importSpec": {
+            "modulePath": "FloatingWhatsapp.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicFloatingWhatsapp.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "UKDNwKMUKx",
+          "name": "DialogOverlay",
+          "type": "managed",
+          "projectId": "sqsUtdEY9EziH5JCt3D7uY",
+          "renderModuleFilePath": "plasmic/bentukcinta/PlasmicDialogOverlay.tsx",
+          "importSpec": {
+            "modulePath": "DialogOverlay.tsx"
+          },
+          "cssFilePath": "plasmic/bentukcinta/PlasmicDialogOverlay.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -155,6 +181,11 @@
           "id": "yMsiz1JvvB",
           "name": "DownIconsvgIcon",
           "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__DownIconsvg.tsx"
+        },
+        {
+          "id": "X7pYoTjLr7",
+          "name": "WhatsappIconsvgIcon",
+          "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__WhatsappIconsvg.tsx"
         }
       ],
       "images": [],

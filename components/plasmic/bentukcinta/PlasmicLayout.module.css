@@ -14,8 +14,13 @@
 .template1:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+  flex-shrink: 0;
+}
+.template1template_template1:global(.__wab_instance) {
+  flex-shrink: 0;
 }
 .template1template_template2:global(.__wab_instance) {
+  flex-shrink: 0;
   display: none;
 }
 .template2:global(.__wab_instance) {
@@ -24,7 +29,4 @@
 }
 .template2template_template1:global(.__wab_instance) {
   display: none;
-}
-.footer:global(.__wab_instance) {
-  position: relative;
 }

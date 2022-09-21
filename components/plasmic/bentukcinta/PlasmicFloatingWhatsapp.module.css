@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.link {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0px 12px 24px 0px #25d36640;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 50px;
+  padding: 0px;
+}
+.root:hover .link {
+  box-shadow: 0px 12px 32px 0px #25d36640;
+}
+.root:active .link {
+  background: #1eba58;
+  box-shadow: none;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  flex-shrink: 0;
+}

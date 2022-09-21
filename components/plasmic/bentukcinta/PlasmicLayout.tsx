@@ -36,7 +36,6 @@ import {
 } from "@plasmicapp/react-web";
 import Template1 from "../../Template1"; // plasmic-import: F6P_0Ibk5i6/component
 import Template2 from "../../Template2"; // plasmic-import: PebR7r49CnQ/component
-import Footer from "../../Footer"; // plasmic-import: fuuTwrOwBL/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -67,7 +66,6 @@ export type PlasmicLayout__OverridesType = {
   root?: p.Flex<"div">;
   template1?: p.Flex<typeof Template1>;
   template2?: p.Flex<typeof Template2>;
-  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultLayoutProps {
@@ -177,21 +175,14 @@ function PlasmicLayout__RenderFunc(props: {
           }
         />
       ) : null}
-
-      <Footer
-        data-plasmic-name={"footer"}
-        data-plasmic-override={overrides.footer}
-        className={classNames("__wab_instance", sty.footer)}
-      />
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "template1", "template2", "footer"],
+  root: ["root", "template1", "template2"],
   template1: ["template1"],
-  template2: ["template2"],
-  footer: ["footer"]
+  template2: ["template2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -200,7 +191,6 @@ type NodeDefaultElementType = {
   root: "div";
   template1: typeof Template1;
   template2: typeof Template2;
-  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -266,7 +256,6 @@ export const PlasmicLayout = Object.assign(
     // Helper components rendering sub-elements
     template1: makeNodeComponent("template1"),
     template2: makeNodeComponent("template2"),
-    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicLayout
     internalVariantProps: PlasmicLayout__VariantProps,
