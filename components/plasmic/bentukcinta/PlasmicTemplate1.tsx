@@ -1434,9 +1434,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 
 const element = document.getElementById("closeDialogBtn");
-element.addEventListener("click", function() {
-alert('horee');
-});
+console.log(element);
 
 
 export const PlasmicTemplate1 = Object.assign(
