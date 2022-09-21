@@ -128,7 +128,7 @@ function PlasmicDialogOverlay__RenderFunc(props: {
               projectcss.__wab_text,
               sty.button
             )}
-            onClick={()=>dialogoverlay.style.visivility = "hidden"}
+            id={"closeDialogBtn" as const}
           >
             {"Click Me"}
           </button>
