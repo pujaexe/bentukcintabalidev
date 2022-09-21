@@ -40,11 +40,18 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: sqsUtdEY9EziH5JCt3D7uY/projectcss
 import sty from "./PlasmicDialogOverlay.module.css"; // plasmic-import: UKDNwKMUKx/css
 
-export type PlasmicDialogOverlay__VariantMembers = {};
+export type PlasmicDialogOverlay__VariantMembers = {
+  isHide: "isHide";
+};
 
-export type PlasmicDialogOverlay__VariantsArgs = {};
+export type PlasmicDialogOverlay__VariantsArgs = {
+  isHide?: SingleBooleanChoiceArg<"isHide">;
+};
+
 type VariantPropType = keyof PlasmicDialogOverlay__VariantsArgs;
-export const PlasmicDialogOverlay__VariantProps = new Array<VariantPropType>();
+export const PlasmicDialogOverlay__VariantProps = new Array<VariantPropType>(
+  "isHide"
+);
 
 export type PlasmicDialogOverlay__ArgsType = {};
 type ArgPropType = keyof PlasmicDialogOverlay__ArgsType;
@@ -57,6 +64,7 @@ export type PlasmicDialogOverlay__OverridesType = {
 };
 
 export interface DefaultDialogOverlayProps {
+  isHide?: SingleBooleanChoiceArg<"isHide">;
   className?: string;
 }
 
@@ -86,55 +94,84 @@ function PlasmicDialogOverlay__RenderFunc(props: {
   };
 
   return (
-    <div
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
-      data-plasmic-root={true}
-      data-plasmic-for-node={forNode}
-      className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
-        projectcss.plasmic_tokens,
-        sty.root
-      )}
-      id={"dialogoverlay" as const}
-    >
-      <div className={classNames(projectcss.all, sty.freeBox__jrq7X)}>
+    (hasVariant(variants, "isHide", "isHide") ? false : true) ? (
+      <div
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        className={classNames(
+          projectcss.all,
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          sty.root,
+          { [sty.rootisHide]: hasVariant(variants, "isHide", "isHide") }
+        )}
+        id={"dialogoverlay" as const}
+      >
         <div
-          className={classNames(projectcss.all, sty.freeBox__j2VUt)}
-          id={"dialogbox" as const}
+          className={classNames(projectcss.all, sty.freeBox__jrq7X, {
+            [sty.freeBoxisHide__jrq7XkD2Jm]: hasVariant(
+              variants,
+              "isHide",
+              "isHide"
+            )
+          })}
         >
-          <h1
-            data-plasmic-name={"h1"}
-            data-plasmic-override={overrides.h1}
-            className={classNames(
-              projectcss.all,
-              projectcss.h1,
-              projectcss.__wab_text,
-              sty.h1
-            )}
-          >
-            {"Dialod"}
-          </h1>
+          {(hasVariant(variants, "isHide", "isHide") ? false : true) ? (
+            <div
+              className={classNames(projectcss.all, sty.freeBox__j2VUt, {
+                [sty.freeBoxisHide__j2VUTkD2Jm]: hasVariant(
+                  variants,
+                  "isHide",
+                  "isHide"
+                )
+              })}
+              id={"dialogbox" as const}
+            >
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1,
+                  { [sty.h1isHide]: hasVariant(variants, "isHide", "isHide") }
+                )}
+              >
+                {"Dialod"}
+              </h1>
 
-          <button
-            data-plasmic-name={"button"}
-            data-plasmic-override={overrides.button}
-            className={classNames(
-              projectcss.all,
-              projectcss.button,
-              projectcss.__wab_text,
-              sty.button
-            )}
-            id={"closeDialogBtn" as const}
-          >
-            {"Click Me"}
-          </button>
+              {(hasVariant(variants, "isHide", "isHide") ? false : true) ? (
+                <button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.button,
+                    projectcss.__wab_text,
+                    sty.button,
+                    {
+                      [sty.buttonisHide]: hasVariant(
+                        variants,
+                        "isHide",
+                        "isHide"
+                      )
+                    }
+                  )}
+                  id={"closeDialogBtn" as const}
+                >
+                  {"Click Me"}
+                </button>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </div>
-    </div>
+    ) : null
   ) as React.ReactElement | null;
 }
 
