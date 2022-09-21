@@ -52,6 +52,7 @@ import projectcss from "../blank_project/plasmic_blank_project.module.css"; // p
 import sty from "./PlasmicTemplate1.module.css"; // plasmic-import: F6P_0Ibk5i6/css
 
 import DownIconsvgIcon from "./icons/PlasmicIcon__DownIconsvg"; // plasmic-import: yMsiz1JvvB/icon
+import PlasmicDialogOverlay from "./PlasmicDialogOverlay";
 
 export type PlasmicTemplate1__VariantMembers = {};
 
@@ -1431,14 +1432,12 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   return func;
 }
 
-useEffect(() => {
 
-  const element = document.getElementById("closeDialogBtn");
-  element.addEventListener("click", function() {
-  document.getElementById("dialogoverlay")?.style.visibility="hidden";
-  });
-
+const element = document.getElementById("closeDialogBtn");
+element.addEventListener("click", function() {
+alert('horee');
 });
+
 
 export const PlasmicTemplate1 = Object.assign(
   // Top-level PlasmicTemplate1 renders the root element
