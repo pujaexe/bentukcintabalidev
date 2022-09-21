@@ -1433,9 +1433,6 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 }
 
 
-const element = document.getElementById("closeDialogBtn");
-console.log(element);
-
 
 export const PlasmicTemplate1 = Object.assign(
   // Top-level PlasmicTemplate1 renders the root element
