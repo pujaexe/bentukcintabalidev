@@ -35,13 +35,13 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import DialogOverlay from "../../DialogOverlay"; // plasmic-import: UKDNwKMUKx/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 import { GraphCMSFetcher } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: 8sYtOZawA08/codeComponent
 import FloatingWhatsapp from "../../FloatingWhatsapp"; // plasmic-import: -6rOvsYjub/component
 import { GraphCMSField } from "@plasmicpkgs/plasmic-graphcms"; // plasmic-import: _3Kx5FMtA8n/codeComponent
 import MonthWord from "../../MonthWord"; // plasmic-import: ccyNqBOp-s/component
 import YouTube from "@plasmicpkgs/react-youtube"; // plasmic-import: CHO21V9uYw/codeComponent
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: CMDBvOhaI4s/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 import Footer from "../../Footer"; // plasmic-import: fuuTwrOwBL/component
 
 import { useScreenVariants as useScreenVariantsqo0Z9EiWgEmol } from "../blank_project/PlasmicGlobalVariant__Screen"; // plasmic-import: Qo0Z9eiWgEMOL/globalVariant
@@ -108,8 +108,9 @@ export type PlasmicTemplate1__OverridesType = {
   location?: p.Flex<"section">;
   locationTitle?: p.Flex<"div">;
   doaWrapper2?: p.Flex<"div">;
-  iframe?: p.Flex<typeof Iframe>;
+  lokasi?: p.Flex<typeof Iframe>;
   buttonWrapper?: p.Flex<"div">;
+  audio?: p.Flex<"div">;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -164,10 +165,19 @@ function PlasmicTemplate1__RenderFunc(props: {
       )}
       id={"body-template1" as const}
     >
-      <DialogOverlay
-        data-plasmic-name={"dialogOverlay"}
-        data-plasmic-override={overrides.dialogOverlay}
-        className={classNames("__wab_instance", sty.dialogOverlay)}
+      {true ? (
+        <DialogOverlay
+          data-plasmic-name={"dialogOverlay"}
+          data-plasmic-override={overrides.dialogOverlay}
+          className={classNames("__wab_instance", sty.dialogOverlay)}
+        />
+      ) : null}
+
+      <Embed
+        className={classNames("__wab_instance", sty.embedHtml___48Kro)}
+        code={
+          '<script>\nconst element = document.getElementById("closeDialogBtn");\nelement.addEventListener("click", function() {\n    document.getElementById("dialogoverlay").style.visibility="hidden";\n    document.getElementById("body-template1").style.height="auto";\n    document.getElementById("body-template1").style.overflow="visible";\n    document.getElementById("body-template1").style.position="relative";\n    document.getElementById(\'audio\').play();\n});\n</script>' as const
+        }
       />
 
       <GraphCMSFetcher
@@ -1069,9 +1079,9 @@ function PlasmicTemplate1__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.doaWrapper2)}
                 >
                   <Iframe
-                    data-plasmic-name={"iframe"}
-                    data-plasmic-override={overrides.iframe}
-                    className={classNames("__wab_instance", sty.iframe)}
+                    data-plasmic-name={"lokasi"}
+                    data-plasmic-override={overrides.lokasi}
+                    className={classNames("__wab_instance", sty.lokasi)}
                     src={(() => {
                       try {
                         return $ctx.graphCmsItem.gmapsEmbed;
@@ -1127,7 +1137,9 @@ function PlasmicTemplate1__RenderFunc(props: {
                   </div>
 
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__rAgOb)}
+                    data-plasmic-name={"audio"}
+                    data-plasmic-override={overrides.audio}
+                    className={classNames(projectcss.all, sty.audio)}
                   >
                     <Embed
                       className={classNames(
@@ -1135,7 +1147,7 @@ function PlasmicTemplate1__RenderFunc(props: {
                         sty.embedHtml__ueJfw
                       )}
                       code={
-                        '<audio id="audio" controls loop>\n    <source src="https://www.bentukcinta.com/depurnapasir/music/song.mp3">\n</audio>\n\n\n\n\n<script type="text/javascript">\nwindow.onload=function(){\n    document.getElementById("audio").play();\n  }\n</script>' as const
+                        '<audio id="audio" controls loop>\n    <source src="https://www.bentukcinta.com/depurnapasir/music/song.mp3">\n</audio>\n' as const
                       }
                     />
                   </div>
@@ -1151,13 +1163,6 @@ function PlasmicTemplate1__RenderFunc(props: {
           )}
         </ph.DataCtxReader>
       </GraphCMSFetcher>
-
-      <Embed
-        className={classNames("__wab_instance", sty.embedHtml___48Kro)}
-        code={
-          '<script>\nconst element = document.getElementById("closeDialogBtn");\nelement.addEventListener("click", function() {\n  document.getElementById("dialogoverlay").style.visibility="hidden";\n});\n</script>' as const
-        }
-      />
     </div>
   ) as React.ReactElement | null;
 }
@@ -1203,8 +1208,9 @@ const PlasmicDescendants = {
     "location",
     "locationTitle",
     "doaWrapper2",
-    "iframe",
+    "lokasi",
     "buttonWrapper",
+    "audio",
     "footer"
   ],
   dialogOverlay: ["dialogOverlay"],
@@ -1321,13 +1327,15 @@ const PlasmicDescendants = {
     "location",
     "locationTitle",
     "doaWrapper2",
-    "iframe",
-    "buttonWrapper"
+    "lokasi",
+    "buttonWrapper",
+    "audio"
   ],
   locationTitle: ["locationTitle"],
-  doaWrapper2: ["doaWrapper2", "iframe", "buttonWrapper"],
-  iframe: ["iframe"],
+  doaWrapper2: ["doaWrapper2", "lokasi", "buttonWrapper", "audio"],
+  lokasi: ["lokasi"],
   buttonWrapper: ["buttonWrapper"],
+  audio: ["audio"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1373,8 +1381,9 @@ type NodeDefaultElementType = {
   location: "section";
   locationTitle: "div";
   doaWrapper2: "div";
-  iframe: typeof Iframe;
+  lokasi: typeof Iframe;
   buttonWrapper: "div";
+  audio: "div";
   footer: typeof Footer;
 };
 
@@ -1477,8 +1486,9 @@ export const PlasmicTemplate1 = Object.assign(
     location: makeNodeComponent("location"),
     locationTitle: makeNodeComponent("locationTitle"),
     doaWrapper2: makeNodeComponent("doaWrapper2"),
-    iframe: makeNodeComponent("iframe"),
+    lokasi: makeNodeComponent("lokasi"),
     buttonWrapper: makeNodeComponent("buttonWrapper"),
+    audio: makeNodeComponent("audio"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicTemplate1

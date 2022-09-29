@@ -188,7 +188,33 @@
           "moduleFilePath": "plasmic/bentukcinta/icons/PlasmicIcon__WhatsappIconsvg.tsx"
         }
       ],
-      "images": [],
+      "images": [
+        {
+          "id": "pmrjNF2bHt",
+          "name": "wash-hands-svgrepo-com.svg",
+          "filePath": "../public/plasmic/bentukcinta/images/washHandsSvgrepoComsvg.svg"
+        },
+        {
+          "id": "qhxEYvAZzN",
+          "name": "ppe-mask-n95-svgrepo-com.svg",
+          "filePath": "../public/plasmic/bentukcinta/images/ppeMaskN95SvgrepoComsvg.svg"
+        },
+        {
+          "id": "OAR0U-MTt",
+          "name": "social-distancing-covid-social-distance-coronavirus-spread-prevention-svgrepo-com.svg",
+          "filePath": "../public/plasmic/bentukcinta/images/socialDistancingCovidSocialDistanceCoronavirusSpreadPreventionSvgrepoComsvg.svg"
+        },
+        {
+          "id": "4c-hDvmkmT",
+          "name": "safe-distancing-covid-social-distancing-coronavirus-prevention-svgrepo-com.svg",
+          "filePath": "../public/plasmic/bentukcinta/images/safeDistancingCovidSocialDistancingCoronavirusPreventionSvgrepoComsvg.svg"
+        },
+        {
+          "id": "7piDCI80tQ",
+          "name": "social-distancing-svgrepo-com.svg",
+          "filePath": "../public/plasmic/bentukcinta/images/socialDistancingSvgrepoComsvg.svg"
+        }
+      ],
       "indirect": false,
       "globalContextsFilePath": "plasmic/blank_project/PlasmicGlobalContextsProvider.tsx",
       "codeComponents": [

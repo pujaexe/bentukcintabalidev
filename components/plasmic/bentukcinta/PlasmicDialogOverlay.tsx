@@ -35,23 +35,18 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 
+import { useScreenVariants as useScreenVariantsqo0Z9EiWgEmol } from "../blank_project/PlasmicGlobalVariant__Screen"; // plasmic-import: Qo0Z9eiWgEMOL/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: sqsUtdEY9EziH5JCt3D7uY/projectcss
 import sty from "./PlasmicDialogOverlay.module.css"; // plasmic-import: UKDNwKMUKx/css
 
-export type PlasmicDialogOverlay__VariantMembers = {
-  isHide: "isHide";
-};
+export type PlasmicDialogOverlay__VariantMembers = {};
 
-export type PlasmicDialogOverlay__VariantsArgs = {
-  isHide?: SingleBooleanChoiceArg<"isHide">;
-};
-
+export type PlasmicDialogOverlay__VariantsArgs = {};
 type VariantPropType = keyof PlasmicDialogOverlay__VariantsArgs;
-export const PlasmicDialogOverlay__VariantProps = new Array<VariantPropType>(
-  "isHide"
-);
+export const PlasmicDialogOverlay__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicDialogOverlay__ArgsType = {};
 type ArgPropType = keyof PlasmicDialogOverlay__ArgsType;
@@ -59,12 +54,19 @@ export const PlasmicDialogOverlay__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicDialogOverlay__OverridesType = {
   root?: p.Flex<"div">;
-  h1?: p.Flex<"h1">;
+  dialogWrapper?: p.Flex<"div">;
+  dialog?: p.Flex<"div">;
+  h4?: p.Flex<"h4">;
+  h6?: p.Flex<"h6">;
+  protokolList?: p.Flex<"div">;
+  protokol1?: p.Flex<"div">;
+  protokol12?: p.Flex<"div">;
+  protokol13?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
   button?: p.Flex<"button">;
 };
 
 export interface DefaultDialogOverlayProps {
-  isHide?: SingleBooleanChoiceArg<"isHide">;
   className?: string;
 }
 
@@ -93,91 +95,256 @@ function PlasmicDialogOverlay__RenderFunc(props: {
     ...variants
   };
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsqo0Z9EiWgEmol()
+  });
+
   return (
-    (hasVariant(variants, "isHide", "isHide") ? false : true) ? (
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
+      data-plasmic-root={true}
+      data-plasmic-for-node={forNode}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
+      id={"dialogoverlay" as const}
+    >
       <div
-        data-plasmic-name={"root"}
-        data-plasmic-override={overrides.root}
-        data-plasmic-root={true}
-        data-plasmic-for-node={forNode}
-        className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
-          projectcss.plasmic_tokens,
-          sty.root,
-          { [sty.rootisHide]: hasVariant(variants, "isHide", "isHide") }
-        )}
-        id={"dialogoverlay" as const}
+        data-plasmic-name={"dialogWrapper"}
+        data-plasmic-override={overrides.dialogWrapper}
+        className={classNames(projectcss.all, sty.dialogWrapper)}
       >
         <div
-          className={classNames(projectcss.all, sty.freeBox__jrq7X, {
-            [sty.freeBoxisHide__jrq7XkD2Jm]: hasVariant(
-              variants,
-              "isHide",
-              "isHide"
-            )
-          })}
+          data-plasmic-name={"dialog"}
+          data-plasmic-override={overrides.dialog}
+          className={classNames(projectcss.all, sty.dialog)}
+          id={"dialogbox" as const}
         >
-          {(hasVariant(variants, "isHide", "isHide") ? false : true) ? (
+          <h4
+            data-plasmic-name={"h4"}
+            data-plasmic-override={overrides.h4}
+            className={classNames(
+              projectcss.all,
+              projectcss.h4,
+              projectcss.__wab_text,
+              sty.h4
+            )}
+          >
+            {"Protokol Covid-19"}
+          </h4>
+
+          <h6
+            data-plasmic-name={"h6"}
+            data-plasmic-override={overrides.h6}
+            className={classNames(
+              projectcss.all,
+              projectcss.h6,
+              projectcss.__wab_text,
+              sty.h6
+            )}
+          >
+            {"Mari kita lindungi kesehatan bersama"}
+          </h6>
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__jyj03
+            )}
+          >
+            {
+              "Tanpa mengurangi rasa hormat, dikarenakan situasi yang sedang terjadi ditengah Pandemi Covid-19 ini kami memohon maaf karena acara akan diselenggarakan sesuai peraturan dan himbauan pemerintah."
+            }
+          </div>
+
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"protokolList"}
+            data-plasmic-override={overrides.protokolList}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.protokolList)}
+          >
             <div
-              className={classNames(projectcss.all, sty.freeBox__j2VUt, {
-                [sty.freeBoxisHide__j2VUTkD2Jm]: hasVariant(
-                  variants,
-                  "isHide",
-                  "isHide"
-                )
-              })}
-              id={"dialogbox" as const}
+              data-plasmic-name={"protokol1"}
+              data-plasmic-override={overrides.protokol1}
+              className={classNames(projectcss.all, sty.protokol1)}
             >
-              <h1
-                data-plasmic-name={"h1"}
-                data-plasmic-override={overrides.h1}
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__kD1Z8)}
+                displayHeight={"42px" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"42px" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/bentukcinta/images/washHandsSvgrepoComsvg.svg",
+                  fullWidth: 150,
+                  fullHeight: 150,
+                  aspectRatio: 1
+                }}
+              />
+
+              <div
                 className={classNames(
                   projectcss.all,
-                  projectcss.h1,
                   projectcss.__wab_text,
-                  sty.h1,
-                  { [sty.h1isHide]: hasVariant(variants, "isHide", "isHide") }
+                  sty.text___0ShW2
                 )}
               >
-                {"Dialod"}
-              </h1>
+                {"Membersihkan Tangan"}
+              </div>
+            </div>
 
-              {(hasVariant(variants, "isHide", "isHide") ? false : true) ? (
-                <button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.button,
-                    projectcss.__wab_text,
-                    sty.button,
-                    {
-                      [sty.buttonisHide]: hasVariant(
-                        variants,
-                        "isHide",
-                        "isHide"
-                      )
-                    }
-                  )}
-                  id={"closeDialogBtn" as const}
-                >
-                  {"Click Me"}
-                </button>
-              ) : null}
+            <div
+              data-plasmic-name={"protokol12"}
+              data-plasmic-override={overrides.protokol12}
+              className={classNames(projectcss.all, sty.protokol12)}
+            >
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__ksbFu)}
+                displayHeight={"42px" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"42px" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/bentukcinta/images/ppeMaskN95SvgrepoComsvg.svg",
+                  fullWidth: 150,
+                  fullHeight: 150,
+                  aspectRatio: 1
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__cGxs6
+                )}
+              >
+                {"Memakai Masker"}
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"protokol13"}
+              data-plasmic-override={overrides.protokol13}
+              className={classNames(projectcss.all, sty.protokol13)}
+            >
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__jEyh)}
+                displayHeight={"42px" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"42px" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/bentukcinta/images/socialDistancingSvgrepoComsvg.svg",
+                  fullWidth: 150,
+                  fullHeight: 150,
+                  aspectRatio: 1
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vQxy1
+                )}
+              >
+                {"Menjaga Jarak"}
+              </div>
+            </div>
+          </p.Stack>
+
+          {true ? (
+            <div
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              className={classNames(projectcss.all, sty.freeBox)}
+            >
+              <button
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.button,
+                  projectcss.__wab_text,
+                  sty.button
+                )}
+                id={"closeDialogBtn" as const}
+              >
+                {"Buka Undangan"}
+              </button>
             </div>
           ) : null}
         </div>
       </div>
-    ) : null
+    </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "button"],
-  h1: ["h1"],
+  root: [
+    "root",
+    "dialogWrapper",
+    "dialog",
+    "h4",
+    "h6",
+    "protokolList",
+    "protokol1",
+    "protokol12",
+    "protokol13",
+    "freeBox",
+    "button"
+  ],
+  dialogWrapper: [
+    "dialogWrapper",
+    "dialog",
+    "h4",
+    "h6",
+    "protokolList",
+    "protokol1",
+    "protokol12",
+    "protokol13",
+    "freeBox",
+    "button"
+  ],
+  dialog: [
+    "dialog",
+    "h4",
+    "h6",
+    "protokolList",
+    "protokol1",
+    "protokol12",
+    "protokol13",
+    "freeBox",
+    "button"
+  ],
+  h4: ["h4"],
+  h6: ["h6"],
+  protokolList: ["protokolList", "protokol1", "protokol12", "protokol13"],
+  protokol1: ["protokol1"],
+  protokol12: ["protokol12"],
+  protokol13: ["protokol13"],
+  freeBox: ["freeBox", "button"],
   button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -185,7 +352,15 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  h1: "h1";
+  dialogWrapper: "div";
+  dialog: "div";
+  h4: "h4";
+  h6: "h6";
+  protokolList: "div";
+  protokol1: "div";
+  protokol12: "div";
+  protokol13: "div";
+  freeBox: "div";
   button: "button";
 };
 
@@ -250,7 +425,15 @@ export const PlasmicDialogOverlay = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    h1: makeNodeComponent("h1"),
+    dialogWrapper: makeNodeComponent("dialogWrapper"),
+    dialog: makeNodeComponent("dialog"),
+    h4: makeNodeComponent("h4"),
+    h6: makeNodeComponent("h6"),
+    protokolList: makeNodeComponent("protokolList"),
+    protokol1: makeNodeComponent("protokol1"),
+    protokol12: makeNodeComponent("protokol12"),
+    protokol13: makeNodeComponent("protokol13"),
+    freeBox: makeNodeComponent("freeBox"),
     button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicDialogOverlay
