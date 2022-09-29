@@ -11,6 +11,7 @@
   "dependencies": {
     "@plasmicapp/cli": "^0.1.186",
     "@plasmicapp/host": "^1.0.79",
+    "@plasmicapp/loader-nextjs": "^1.0.184",
     "@plasmicapp/react-web": "^0.2.110",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.84",
     "@plasmicpkgs/plasmic-embed-css": "^0.1.63",
